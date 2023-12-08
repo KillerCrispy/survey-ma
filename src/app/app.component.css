@@ -1,0 +1,31 @@
+div {
+    width: 500px;
+    height: 200px;
+    border: 10px solid #2196F3;
+    background-color: #f7f7f7;
+  }
+  
+  body {
+    margin: 0;
+    padding: 0;
+    display: grid;
+    place-content: center;
+    min-height: 100vh;
+    background: #30353b;
+  }
+  
+  * {
+    box-sizing: border-box;
+  }
+
+  .matrix {
+    display: grid; 
+  grid-template-columns: 1fr 1fr 1fr 1fr; 
+  grid-template-rows: 1fr 1fr 1fr; 
+  gap: 0px 0px; 
+  grid-template-areas: 
+    ". . . ."
+    ". . . ."
+    ". . . ."; 
+  }
+
