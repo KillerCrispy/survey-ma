@@ -1,6 +1,7 @@
 
 import { fabric } from 'fabric'
 import { install } from 'chart-js-fabric'
+import { COLOR_NAMES } from './constants';
 
 install(fabric)
 
@@ -32,18 +33,76 @@ export function initChartMusic({ Survey }: { Survey: any }) {
         // NoLieblingsFarbe1
         // LieblingsFarbe
 
-        const color = localStorage.getItem('Lieblingsfarbe'); //Hier ändern für ander Farben
+        const testOrder = localStorage.getItem('testOrder');
+        const colorOrder = localStorage.getItem('colorOrder');
 
+        let color: string | null;
+
+        if (testOrder === '123') {
+          if (colorOrder === '1') {
+            color = localStorage.getItem(COLOR_NAMES[1]);
+          }
+
+          if (colorOrder === '2') {
+            color = localStorage.getItem(COLOR_NAMES[0]);
+          }
+
+          if (colorOrder === '3') {
+            color = localStorage.getItem(COLOR_NAMES[2]);
+          }
+        }
+
+        if (testOrder === '231') {
+          if (colorOrder === '1') {
+            color = localStorage.getItem(COLOR_NAMES[0]);
+          }
+
+          if (colorOrder === '2') {
+            color = localStorage.getItem(COLOR_NAMES[2]);
+          }
+
+          if (colorOrder === '3') {
+            color = localStorage.getItem(COLOR_NAMES[1]);
+          }
+        }
+
+        if (testOrder === '312') {
+          if (colorOrder === '1') {
+            color = localStorage.getItem(COLOR_NAMES[2]);
+          }
+
+          if (colorOrder === '2') {
+            color = localStorage.getItem(COLOR_NAMES[1]);
+          }
+
+          if (colorOrder === '3') {
+            color = localStorage.getItem(COLOR_NAMES[0]);
+          }
+        }
+
+        if (testOrder === '132') {
+          if (colorOrder === '1') {
+            color = localStorage.getItem(COLOR_NAMES[1]);
+          }
+
+          if (colorOrder === '2') {
+            color = localStorage.getItem(COLOR_NAMES[2]);
+          }
+
+          if (colorOrder === '3') {
+            color = localStorage.getItem(COLOR_NAMES[0]);
+          }
+        }
 
         var rgb = color!.match(/\d+/g);
         console.log('RGB Ausgabe:',rgb);
 
         let colors: string[] = new Array<string>(6);
         if (rgb) {
-           
+
             console.log('Colors 0 leer:',colors[0]);
 
-            
+
             let one = Number.parseInt(rgb[0]);
             let two = Number.parseInt(rgb[1]);
             let three = Number.parseInt(rgb[2]);
@@ -52,7 +111,7 @@ export function initChartMusic({ Survey }: { Survey: any }) {
            console.log('G:',two);
            console.log('B:',three);
 
-            
+
             //Farbschema wählen
 
             switch (one)
@@ -79,7 +138,7 @@ export function initChartMusic({ Survey }: { Survey: any }) {
 
                 break;
 
-                
+
                 case 242: //Farbe 3 mittelorange
 
                 colors[0] = 'rgb(242,146,0)';
@@ -90,7 +149,7 @@ export function initChartMusic({ Survey }: { Survey: any }) {
                 colors[5] = 'rgb(237,151,20)';
 
                 break;
-                
+
                 case 234: //Farbe 4 zwischen rot und orange
 
                 colors[0] = 'rgb(234,91,12)';
@@ -101,7 +160,7 @@ export function initChartMusic({ Survey }: { Survey: any }) {
                 colors[5] = 'rgb(255,144,83)';
 
                 break;
-                
+
                 case 288: //Farbe 5 ROT
 
                 colors[0] = 'rgb(288,6,19)';
@@ -201,12 +260,12 @@ export function initChartMusic({ Survey }: { Survey: any }) {
 
 
         /*for (let index = 0; index < 6; index++) {
-               
-                
+
+
                 if (one && two && three) {
                     colors[index] = `rgb(${one}, ${two}, ${three })`;
                 }
-                
+
                 if (isOneHigh) {
                     one -= r;
                 } else {
@@ -224,12 +283,12 @@ export function initChartMusic({ Survey }: { Survey: any }) {
                 } else {
                     three += b;
                 }
-                
+
             }*/
-            
+
             //console.log(colors)/*
         }
-          
+
         const instance = new fabric.Canvas('myCanvas');
         const conf: fabric.IChartConfiguration = {
             width:550,
@@ -379,7 +438,7 @@ export function initChartMusic({ Survey }: { Survey: any }) {
                 //}
             }
         instance.add(new fabric.Chart(conf));
-        
+
         const onValueChangedCallback = function () {
           //text.value = question.value ? question.value : "";
         }
@@ -402,6 +461,6 @@ export function initChartMusic({ Survey }: { Survey: any }) {
     }
 
     console.log('widget', widget.htmlTemplate);
-    
+
     Survey.CustomWidgetCollection.Instance.addCustomWidget(widget, "customtype");
   }

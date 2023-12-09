@@ -26,7 +26,7 @@ export function initColorPicker(Survey: any) {
             <rect class="color" x="5" y="5" rx="20" ry="20" width="100" height="100"
             style="fill:#feed01;stroke:#9a9a9a;stroke-width:5" />
           </svg>
-      
+
           <svg width="120" height="110">
             <rect class="color" x="15" y="5" rx="20" ry="20" width="100" height="100"
              style="fill:#f9b234;stroke:#9a9a9a;stroke-width:5" />
@@ -36,7 +36,7 @@ export function initColorPicker(Survey: any) {
           <svg width="120" height="110">
             <rect class="color" x="15" y="5" rx="20" ry="20" width="100" height="100"
             style="fill:#f29200;stroke:#9a9a9a;stroke-width:5" />
-          </svg> 
+          </svg>
 
 
           <svg width="120" height="110">
@@ -62,7 +62,7 @@ export function initColorPicker(Survey: any) {
           <svg width="120" height="110">
             <rect class="color" x="15" y="5" rx="20" ry="20" width="100" height="100"
             style="fill:#59358c;stroke:#9a9a9a;stroke-width:5" />
-          </svg> 
+          </svg>
 
 
           <svg width="120" height="110">
@@ -87,13 +87,13 @@ export function initColorPicker(Survey: any) {
           <svg width="120" height="110">
             <rect class="color" x="15" y="5" rx="20" ry="20" width="100" height="100"
             style="fill:#0c8e36;stroke:#9a9a9a;stroke-width:5" />
-          </svg> 
+          </svg>
 
           <svg width="120" height="110">
             <rect class="color" x="15" y="5" rx="20" ry="20" width="100" height="100"
             style="fill:#94c120;stroke:#9a9a9a;stroke-width:5" />
           </svg>
-         
+
         </div>
       </div>
 
@@ -169,27 +169,27 @@ export function initColorPicker(Survey: any) {
         const q12 = el.getElementsByClassName('q12')[0];
 
         q2.style.display = 'none'
-        
+
         if(localStorage!= null)
         {
-          localStorage.clear();
+          localStorage.removeItem('colorpick');
         }
 
         colors.forEach((color: any) => {
             color.onclick = function () {
                 const colorPick = localStorage.getItem('colorpick');
                 let current = JSON.parse(colorPick!);
-              
+
                 if (current && current.length > 10) {
                   return;
                 }
 
                 if (color.style.opacity != 0.2) {
                     color.style.opacity = 0.2;
-                    
+
                     if (colorPick) {
                         current.push(color.style.fill);
-                      
+
 
                     } else {
                         current = [color.style.fill];
@@ -243,8 +243,8 @@ export function initColorPicker(Survey: any) {
 
                         default:
                             break;
-                    }   
-                } 
+                    }
+                }
 
                 if (colorPick) {
                   if (current && current.length === 11 && next) {
@@ -264,8 +264,8 @@ export function initColorPicker(Survey: any) {
                         localStorage.setItem('Lieblingsfarbe', lastcolor);// Lieblingsfarbe
                       }
 
-                      
-                      
+
+
                     });
 
                   }
@@ -295,6 +295,6 @@ export function initColorPicker(Survey: any) {
         onReadOnlyChangedCallback();
       }
     }
-    
+
     Survey.CustomWidgetCollection.Instance.addCustomWidget(widget, "customtype");
   }

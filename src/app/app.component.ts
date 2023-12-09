@@ -10,6 +10,7 @@ import { initColorPicker } from './color-picker';
 import { initChartMusic } from './charts';
 import { initChartBook } from './buchChart';
 import { initChartLand } from './landChart';
+import { TEST_CASES } from './constants';
 
 const surveyJson = {
   title: 'ERINNERBARKEIT VON INFORMATIONSVISUALISIERUNGEN',
@@ -190,7 +191,7 @@ const surveyJson = {
             'Ich habe meine Freunde letztens gefragt wie oft Sie eigentlich schon verreist sind und wohin. \nDabei haben wir dieses Diagramm erstellt. \n\nBitte schau es dir eine weile an und beantworte dann Fragen dazu.',
         },
         {
-          type: 'music',
+          type: 'land',
         },
         {
           type: 'checkbox',
@@ -306,7 +307,7 @@ const surveyJson = {
             'Neben Büchern und Reisen , hören wir auch Musik. Ich hab mit mal ihr Spotify Wrapped angeschaut und das hier\nerstellt : ',
         },
         {
-          type: 'land',
+          type: 'music',
         },
         {
           type: 'checkbox',
@@ -380,20 +381,35 @@ initChartLand({ Survey });
 export class AppComponent implements OnInit {
   surveyModel: Model | undefined;
   titel: any;
+  isRandomized = false;
   /**
    *
    */
   constructor(public service: LoggingService, private route: ActivatedRoute) {}
 
   ngOnInit() {
-    let testOrder: string | undefined;
+    let testOrder: string = '123';
+    let colorOrder: string = '1';
+
+    // Sollte true sein, falls es generell random sein soll
+    if (this.isRandomized) {
+      testOrder = TEST_CASES[this.getRandomInt(0, 3)];
+      colorOrder = this.getRandomInt(1, 3).toString();
+    }
+
     let newSurvey: any | undefined;
     this.route.queryParams.subscribe((params) => {
-      testOrder = params['t'];
-      if (testOrder) {
+      // Test Order
+      testOrder = params['t'] ?? testOrder;
+      localStorage.setItem('testOrder', testOrder);
+
+      // Color Order
+      colorOrder = params['f'] ?? colorOrder;
+      localStorage.setItem('colorOrder', colorOrder);
+
+      if (params['t']) {
         console.log('TestOrder: ', testOrder);
         newSurvey = this.randomizeTestOrder(testOrder);
-        console.log(newSurvey)
         const survey = new Model(newSurvey);
         survey.onComplete.add(this.surveyComplete);
         survey.onCurrentPageChanging.add(this.pageChange);
@@ -405,6 +421,12 @@ export class AppComponent implements OnInit {
     ['Lieblingsfarbe', 'NoLieblingsFarbe1', 'NoLieblingsFarbe2'].forEach(
       (color) => {}
     );
+  }
+
+  getRandomInt(min: number, max: number) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min) + min); // The maximum is exclusive and the minimum is inclusive
   }
 
   randomizeTestOrder(testOrder: string) {
@@ -434,13 +456,13 @@ export class AppComponent implements OnInit {
 
   //Falls man ablehnt kommt man zum Ende
 
-  pageChange(pageChange: SurveyModel, shit: Survey.CurrentPageChangedEvent) {
-    if (shit.oldCurrentPage.id === 'sp_103') {
+  pageChange(pageChange: SurveyModel, event: Survey.CurrentPageChangedEvent) {
+    if (event.oldCurrentPage.id === 'sp_103') {
       console.log(localStorage.getItem('colorpick'));
     }
 
     if (
-      shit.oldCurrentPage.id === 'sp_100' &&
+      event.oldCurrentPage.id === 'sp_100' &&
       pageChange.data.Datenschutzerklaerung === false
     ) {
       pageChange.doComplete();
