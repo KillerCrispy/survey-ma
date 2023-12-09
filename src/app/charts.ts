@@ -9,18 +9,18 @@ install(fabric)
 export function initChartMusic({ Survey }: { Survey: any }) {
 
     const widget = {
-      name: "chart",
+      name: "music",
       title: "Music",
       iconName: "",
       widgetIsLoaded: function () {
         return true;
       },
       isFit: function (question: any) {
-        return question.getType() === 'chart';
+        return question.getType() === 'music';
       },
       activatedByChanged: function () {
-        Survey.JsonObject.metaData.addClass("chart", [], null, "empty");
-        Survey.JsonObject.metaData.addProperties("chart", [
+        Survey.JsonObject.metaData.addClass("music", [], null, "empty");
+        Survey.JsonObject.metaData.addProperties("music", [
           { name: "buttonText", default: "Click Me" }
         ]);
       },
@@ -28,6 +28,10 @@ export function initChartMusic({ Survey }: { Survey: any }) {
         htmlTemplate: `Test <canvas width="550" height="700" id="myCanvas"></canvas>`,
 
       afterRender: function (question: any, el: any) {
+        // NoLieblingsFarbe1
+        // NoLieblingsFarbe1
+        // LieblingsFarbe
+
         const color = localStorage.getItem('Lieblingsfarbe'); //Hier ändern für ander Farben
 
 

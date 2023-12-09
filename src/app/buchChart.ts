@@ -9,26 +9,30 @@ install(fabric)
 export function initChartBook({ Survey }: { Survey: any }) {
 
     const widget = {
-      name: "bookChar",
-      title: "bookChar",
+      name: "book",
+      title: "book",
       iconName: "",
       widgetIsLoaded: function () {
         return true;
       },
       isFit: function (question: any) {
-        return question.getType() === 'bookChar';
+        return question.getType() === 'book';
       },
       activatedByChanged: function () {
-        Survey.JsonObject.metaData.addClass("bookChar", [], null, "empty");
-        Survey.JsonObject.metaData.addProperties("bookChar", [
+        Survey.JsonObject.metaData.addClass("book", [], null, "empty");
+        Survey.JsonObject.metaData.addProperties("book", [
           { name: "buttonText", default: "Click Me" }
         ]);
       },
         isDefaultRender: false,
-        htmlTemplate: `Test <canvas width="550" height="700" id="myCanvas"></canvas>`,
+        htmlTemplate: `Test <canvas width="550" height="700" id="book"></canvas>`,
 
       afterRender: function (question: any, el: any) {
-        const color = localStorage.getItem('Lieblingsfarbe'); //Hier ändern für ander Farben
+        // NoLieblingsFarbe1
+        // NoLieblingsFarbe1
+        // LieblingsFarbe
+
+        const color = localStorage.getItem('NoLieblingsFarbe1'); //Hier ändern für ander Farben
 
 
         var rgb = color!.match(/\d+/g);
@@ -226,7 +230,7 @@ export function initChartBook({ Survey }: { Survey: any }) {
             //console.log(colors)/*
         }
           
-        const instance = new fabric.Canvas('myCanvas');
+        const instance = new fabric.Canvas('book');
         const conf: fabric.IChartConfiguration = {
             width:550,
             height:700,
@@ -396,8 +400,6 @@ export function initChartBook({ Survey }: { Survey: any }) {
         onReadOnlyChangedCallback();
       }
     }
-
-    console.log('widget', widget.htmlTemplate);
     
     Survey.CustomWidgetCollection.Instance.addCustomWidget(widget, "customtype");
   }

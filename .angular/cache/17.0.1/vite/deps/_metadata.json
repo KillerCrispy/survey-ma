@@ -1,65 +1,65 @@
 {
-  "hash": "3fc8b770",
-  "browserHash": "7e521781",
+  "hash": "0487ce25",
+  "browserHash": "18158443",
   "optimized": {
     "@angular/common": {
       "src": "../../../../../node_modules/@angular/common/fesm2022/common.mjs",
       "file": "@angular_common.js",
-      "fileHash": "69e6d1aa",
+      "fileHash": "dd766e76",
       "needsInterop": false
     },
     "@angular/common/http": {
       "src": "../../../../../node_modules/@angular/common/fesm2022/http.mjs",
       "file": "@angular_common_http.js",
-      "fileHash": "3cfa1397",
+      "fileHash": "43f53678",
       "needsInterop": false
     },
     "@angular/core": {
       "src": "../../../../../node_modules/@angular/core/fesm2022/core.mjs",
       "file": "@angular_core.js",
-      "fileHash": "269b574e",
+      "fileHash": "456d95b6",
       "needsInterop": false
     },
     "@angular/platform-browser": {
       "src": "../../../../../node_modules/@angular/platform-browser/fesm2022/platform-browser.mjs",
       "file": "@angular_platform-browser.js",
-      "fileHash": "45527a57",
+      "fileHash": "59e9a8fe",
       "needsInterop": false
     },
     "@angular/router": {
       "src": "../../../../../node_modules/@angular/router/fesm2022/router.mjs",
       "file": "@angular_router.js",
-      "fileHash": "01958618",
+      "fileHash": "a3f90ee9",
       "needsInterop": false
     },
     "chart-js-fabric": {
       "src": "../../../../../node_modules/chart-js-fabric/dist/chart-js-fabric.es5.js",
       "file": "chart-js-fabric.js",
-      "fileHash": "d1258359",
+      "fileHash": "eab25df7",
       "needsInterop": false
     },
     "fabric": {
       "src": "../../../../../node_modules/fabric/dist/fabric.js",
       "file": "fabric.js",
-      "fileHash": "448447a1",
+      "fileHash": "3f749f57",
       "needsInterop": true
     },
     "rxjs": {
       "src": "../../../../../node_modules/rxjs/dist/esm5/index.js",
       "file": "rxjs.js",
-      "fileHash": "44a93d8e",
+      "fileHash": "49675476",
       "needsInterop": false
     },
     "survey-angular-ui": {
       "src": "../../../../../node_modules/survey-angular-ui/fesm2015/survey-angular-ui.js",
       "file": "survey-angular-ui.js",
-      "fileHash": "56ed8bc5",
+      "fileHash": "d99933b0",
       "needsInterop": false
     },
     "survey-core": {
       "src": "../../../../../node_modules/survey-core/survey.core.js",
       "file": "survey-core.js",
-      "fileHash": "7152c530",
+      "fileHash": "23d8265a",
       "needsInterop": true
     }
   },
