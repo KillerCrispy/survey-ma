@@ -408,10 +408,9 @@ export class AppComponent implements OnInit {
       localStorage.setItem('colorOrder', colorOrder);
 
       if (params['t']) {
-        console.log('TestOrder: ', testOrder);
         newSurvey = this.randomizeTestOrder(testOrder);
         const survey = new Model(newSurvey);
-        survey.onComplete.add(this.surveyComplete);
+        survey.onComplete.add((sender, options) => this.surveyComplete(sender, options));
         survey.onCurrentPageChanging.add(this.pageChange);
         this.surveyModel = survey;
       }
@@ -469,7 +468,7 @@ export class AppComponent implements OnInit {
     }
   }
 
-  surveyComplete(surveyComplete: any) {
+  surveyComplete(surveyComplete: any, options?: any) {
     console.log(surveyComplete.data);
     this.service.sendData(surveyComplete.data); //Service ist schon   Service ist undefined
   }
