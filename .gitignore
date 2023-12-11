@@ -132,3 +132,6 @@ dist
 
 # Dist
 .dist
+
+# Angular Cache
+.angular
