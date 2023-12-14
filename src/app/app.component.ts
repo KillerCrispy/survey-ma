@@ -24,7 +24,7 @@ const surveyJson = {
         {
           type: 'html',
           name: 'Datenschutzerklärung',
-          html: `
+          html:/* `
          <div style="background-color: white; padding-top: 32px; padding-left: 40px; padding-bottom: 40px; padding-right: 40px; box-shadow:  0px 1px 2px 0px rgba(0, 0, 0, 0.15); border-radius: 4px">
         Liebe/r Untersuchungsteilnehmer/in!<br />
         <br />Es folgt eine Information über deine Rechte und Pflichten als Versuchsperson sowie
@@ -56,7 +56,37 @@ const surveyJson = {
                         werden. Zu diesem Zweck wird ein Codewort gebraucht, das nur du kennst und
                         das die Zuordnung der Daten zu deiner Person verhindert.<br /> Wir danken
                          dir noch einmal sehr für deine Teilnahme!
-        </div>`,
+        </div>`
+        */
+
+        `
+        <div style="background-color: white; padding-top: 32px; padding-left: 40px; padding-bottom: 40px; padding-right: 40px; box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.15); border-radius: 4px">
+        <p style="font-weight: bold;">Liebe/r Untersuchungsteilnehmer/in!</p>
+        <p>Es folgt eine Information über deine Rechte und Pflichten als Versuchsperson sowie über unsere Verpflichtungen als Versuchsleiter/ in:</p>
+        <br />
+        <p style="font-weight: bold;">1. Freiwilligkeit der Teilnahme</p>
+        <p>Du hast dich freiwillig dafür entschieden, an dieser Untersuchung teilzunehmen. Wir danken dir sehr für diese Bereitschaft, mit deiner Mitarbeit zum Zustandekommen unserer Untersuchung beizutragen.</p>
+        <br />
+        <p style="font-weight: bold;">2. Schutz vor Schädigung und Belastung</p>
+        <p>Außerdem möchten wir versichern, dass wir uns bemühen, dir in diesem Experiment keine seelischen oder körperlichen Belastungen zuzumuten und dass das Wohlergehen der Versuchsteilnehmer/innen Vorrang vor reinem Interesse an signifikanten Ergebnissen hat.</p>
+        <br />
+        <p style="font-weight: bold;">3. Abbruchrecht</p>
+        <p>Sollten nun entgegen unseren Bemühungen während des Versuchs Belastungen auftreten, die du für zu schwerwiegend erachtest, so hast du die Möglichkeit, die Untersuchung abzubrechen. Aufgrund des Abbruchs musst du aber keinerlei negative Konsequenzen befürchten.</p>
+        <br />
+        <p style="font-weight: bold;">4. Recht auf postexperimentelle Aufklärung</p>
+        <p>Wir versichern, dass nach Abschluss der Erhebungsphase der einzelnen Experimente auf Nachfrage sämtliche gewünschten Informationen über Ablauf, Zweck und Ergebnis des Versuchs gegeben werden können (Kontaktmöglichkeit s. unten).</p>
+        <br />
+        <p style="font-weight: bold;">5. Pflichten als Versuchsperson</p>
+        <p>Den geschilderten Rechten jeder Versuchsperson stehen natürlich auch einige nachvollziehbare Pflichten gegenüber. Die Planung und Durchführung einer Untersuchung erfordert viel Zeit und Mühe.</p>
+        <p>Es ist deshalb wichtig, dass du versuchst, die Aufgabenstellungen der Untersuchung so gut wie möglich zu erfüllen. Dazu gehört, dass du offen und ehrlich auf die Fragen antwortest und den Versuch ernst nimmst. Eine uninteressierte und oberflächliche Mitarbeit gefährdet die Erreichung der Untersuchungsziele erheblich, und es wäre sehr schade, wenn dadurch die ganze Arbeit, die in die Vorbereitung des Experiments gesteckt worden ist, umsonst gewesen wäre.</p>
+        <br />
+        <p style="font-weight: bold;">6. Gewährleistung der Anonymität</p>
+        <p>Abschließend wollen wir darauf hinweisen, dass deine Antworten streng vertraulich behandelt werden. Zu diesem Zweck wird ein Codewort gebraucht, das nur du kennst und das die Zuordnung der Daten zu deiner Person verhindert. Wir danken dir noch einmal sehr für deine Teilnahme!</p>
+    </div>
+    
+
+        `
+        ,
         },
         {
           type: 'boolean',
@@ -69,81 +99,87 @@ const surveyJson = {
       ],
     },
     {
-      name: 'page2',
-      elements: [
-        {
-          type: 'text',
-          name: 'question2',
-          title: 'Name',
-        },
-        {
-          type: 'text',
-          name: 'question3',
-          title: 'Vorname',
-        },
-        {
-          type: 'text',
-          name: 'E-mail',
-
-          title: 'E-mail',
-        },
-        {
-          type: 'text',
-          name: 'question4',
-          title: 'Alter',
-          inputType: 'number',
-        },
-        {
-          type: 'text',
-          name: 'question5',
-          title: 'Studiengang / Ausbildung',
-        },
-        {
-          type: 'boolean',
-          name: 'question6',
-          title:
-            'Haben Sie Schwierigkeiten mit dem Sehen auch wenn Sie eine Brille oder Kontaktlinsen tragen ?',
-        },
-        {
-          type: 'checkbox',
-          name: 'question7',
-          title: 'Bitte geben Sie die Art Ihrer Sehbeeinträchtigung an:',
-          description: 'Bitte zutreffendes Ankreuzten',
-          choices: [
-            {
-              value: 'Item 1',
-              text: 'Ich habe generelle Sehschwierigkeiten',
-            },
-            {
-              value: 'Item 2',
-              text: 'Ich bin farbenblind',
-            },
-          ],
-        },
-        {
-          type: 'rating',
-          name: 'question8',
-          title:
-            'Wie würden Sie Ihren aktuellen Stresslevel auf einer Skala von 1 bis 10 bewerten, wobei 1 "überhaupt kein Stress" und 10 "extrem gestresst" bedeutet?',
-          rateCount: 10,
-          rateMax: 10,
-        },
-        {
-          type: 'boolean',
-          name: 'question9',
-          title:
-            'Fühlen Sie sich nach Ihrem letzten Schlaf erfrischt und ausgeruht?',
-        },
-        {
-          type: 'text',
-          name: 'question10',
-          title:
-            'Gibt es derzeit besondere Ereignisse oder Umstände, die Ihren Stresslevel oder Schlaf beeinflussen? (Bitte beschreiben Sie kurz.) Antwortfeld:',
-          description: 'Diese Frage ist optional',
-        },
+      "name": "page2",
+      "elements": [
+       {
+        "type": "text",
+        "name": "LastName",
+        "title": "Name"
+       },
+       {
+        "type": "text",
+        "name": "FirstName",
+        "title": "Vorname"
+       },
+       {
+        "type": "text",
+        "name": "question4",
+        "title": "Alter",
+        "inputType": "number"
+       },
+       {
+        "type": "text",
+        "name": "question5",
+        "title": "Studiengang / Ausbildung"
+       },
+       {
+        "type": "boolean",
+        "name": "Brille",
+        "title": "Haben Sie Beeinträchtigungen beim Sehen?"
+       },
+       {
+        "type": "checkbox",
+        "name": "Arten von Beeinträchtigung",
+        "visibleIf": "{Brille} = true",
+        "title": "Bitte geben Sie die Art Ihrer Sehbeeinträchtigung an:",
+        "description": "Bitte zutreffendes Ankreuzten",
+        "choices": [
+         {
+          "value": "Item 1",
+          "text": "Ich habe generelle Sehschwierigkeiten"
+         },
+         {
+          "value": "Item 2",
+          "text": "Ich bin farbenblind"
+         },
+         {
+          "value": "Item 3",
+          "text": "Ich trage eine Brille / Kontaktlinsen"
+         },
+         {
+          "value": "Item 4",
+          "text": "andere Beeinträchtigung"
+         }
+        ]
+       },
+       {
+        "type": "text",
+        "name": "question6",
+        "visibleIf": "{Arten von Beeinträchtigung} allof ['Item 4']",
+        "title": "Welche andere Sehbeeinträchtigung haben Sie ?"
+       },
+       {
+        "type": "rating",
+        "name": "question8",
+        "title": "Wie würden Sie Ihren aktuellen Stresslevel auf einer Skala von 1 bis 10 bewerten, wobei 1 \"überhaupt kein Stress\" und 10 \"extrem gestresst\" bedeutet?",
+        "rateCount": 10,
+        "rateMax": 10
+       },
+       {
+        "type": "boolean",
+        "name": "Schlaf",
+        "title": "Fühlen Sie sich nach Ihrem letzten Schlaf erfrischt und ausgeruht?"
+       },
+       {
+        "type": "text",
+        "name": "question10",
+        "visibleIf": "{Schlaf} = false",
+        "title": "Gibt es derzeit besondere Ereignisse oder Umstände, die Ihren Stresslevel oder Schlaf beeinflussen? (Bitte beschreiben Sie kurz.) Antwortfeld:",
+        "description": "Diese Frage ist optional"
+       }
       ],
-      title: 'Demographische Informationen',
-    },
+      "title": "Demographische Informationen"
+     },
     {
       name: 'page3',
       elements: [
@@ -414,6 +450,9 @@ export class AppComponent implements OnInit {
         survey.onCurrentPageChanging.add(this.pageChange);
         this.surveyModel = survey;
       }
+
+      //Neuer Params einfügen und neue HTML
+      //
     });
 
     const matrix = [];
