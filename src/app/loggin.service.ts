@@ -24,7 +24,7 @@ export class LoggingService {
       testOrder: localStorage.getItem('testOrder'),
       colorOrder: localStorage.getItem('colorOrder'),
     };
-    console.log('test', test);
+   // console.log('test:', test);
     this.http
       .post('http://localhost:3000/log/chrissy-ma', test)
       .pipe(take(1))
