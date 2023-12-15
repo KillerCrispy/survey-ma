@@ -1,6 +1,25 @@
 {
     "testOrder": "123",
-    "FirstName": "Vorname",
+    "Datenschutzerklaerung" : "true",       //Datenschutz halt, kein Plan
+    "LastName" : "Nachname",                //Nachname 
+    "FirstName": "Vorname",                 //Vorname
+    "Alter"    : "23",                      //Alter
+    "E-Mail"   : "E-Mail",                  //Email
+    "Arbeit"   : "Arbeit",                  //Studiengang/Ausbildung/Berufsbezeichung
+    "BeeinträchtigungSehen" :  "true",      // Beeinträchtigung beim Sehen
+    "AntwortBeeinträchtigung": "Brille",    //Antwort Beeinträchtigung
+    "RatingStress": "10",                   //Stresslevel
+    "Schlaf": "true",                       // War schlaf gut ?
+    "AntwortSchlaf": "Krank"
+
+
+
+
+
+
+
+
+
     //"surveyData": {"FirstName": "Vorname", }
 
 

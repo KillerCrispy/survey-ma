@@ -81,7 +81,7 @@ const surveyJson = {
         <p>Es ist deshalb wichtig, dass du versuchst, die Aufgabenstellungen der Untersuchung so gut wie möglich zu erfüllen. Dazu gehört, dass du offen und ehrlich auf die Fragen antwortest und den Versuch ernst nimmst. Eine uninteressierte und oberflächliche Mitarbeit gefährdet die Erreichung der Untersuchungsziele erheblich, und es wäre sehr schade, wenn dadurch die ganze Arbeit, die in die Vorbereitung des Experiments gesteckt worden ist, umsonst gewesen wäre.</p>
         <br />
         <p style="font-weight: bold;">6. Gewährleistung der Anonymität</p>
-        <p>Abschließend wollen wir darauf hinweisen, dass deine Antworten streng vertraulich behandelt werden. Zu diesem Zweck wird ein Codewort gebraucht, das nur du kennst und das die Zuordnung der Daten zu deiner Person verhindert. Wir danken dir noch einmal sehr für deine Teilnahme!</p>
+        <p>Deine Antworten werden vertraulich behandelt und anonymisiert. Sie dienen ausschließlich der Auswertung im Rahmen dieser Masterarbeit. Wir danken dir herzlich für deine Teilnahme! Wir danken dir noch einmal sehr für deine Teilnahme!</p>
     </div>
     
 
@@ -104,7 +104,7 @@ const surveyJson = {
        {
         "type": "text",
         "name": "LastName",
-        "title": "Name"
+        "title": "Nachname"
        },
        {
         "type": "text",
@@ -113,54 +113,35 @@ const surveyJson = {
        },
        {
         "type": "text",
-        "name": "question4",
+        "name": "Alter",
         "title": "Alter",
         "inputType": "number"
        },
        {
         "type": "text",
-        "name": "question5",
-        "title": "Studiengang / Ausbildung"
-       },
-       {
-        "type": "boolean",
-        "name": "Brille",
-        "title": "Haben Sie Beeinträchtigungen beim Sehen?"
-       },
-       {
-        "type": "checkbox",
-        "name": "Arten von Beeinträchtigung",
-        "visibleIf": "{Brille} = true",
-        "title": "Bitte geben Sie die Art Ihrer Sehbeeinträchtigung an:",
-        "description": "Bitte zutreffendes Ankreuzten",
-        "choices": [
-         {
-          "value": "Item 1",
-          "text": "Ich habe generelle Sehschwierigkeiten"
-         },
-         {
-          "value": "Item 2",
-          "text": "Ich bin farbenblind"
-         },
-         {
-          "value": "Item 3",
-          "text": "Ich trage eine Brille / Kontaktlinsen"
-         },
-         {
-          "value": "Item 4",
-          "text": "andere Beeinträchtigung"
-         }
-        ]
+        "name": "E-Mail",
+        "title": "E-Mail",
        },
        {
         "type": "text",
-        "name": "question6",
-        "visibleIf": "{Arten von Beeinträchtigung} allof ['Item 4']",
-        "title": "Welche andere Sehbeeinträchtigung haben Sie ?"
+        "name": "Arbeit",
+        "title": "Studiengang / Ausbildung / Berufsbezeichnung"
+       },
+       {
+        "type": "boolean",
+        "name": "BeeinträchtigungSehen",
+        "title": "Haben Sie Beeinträchtigungen beim Sehen?",
+        "description": "Falls Sie eine Brille tragen dies Bitte auch als Sehbeeinträchtiung angeben."
+       },
+       {
+        "type": "text",
+        "name": "AntwortBeeinträchtigung",
+        "visibleIf": "{BeeinträchtigungSehen} = true",
+        "title": "Bitte geben Sie die Art Ihrer Sehbeeinträchtigung an:"
        },
        {
         "type": "rating",
-        "name": "question8",
+        "name": "RatingStress",
         "title": "Wie würden Sie Ihren aktuellen Stresslevel auf einer Skala von 1 bis 10 bewerten, wobei 1 \"überhaupt kein Stress\" und 10 \"extrem gestresst\" bedeutet?",
         "rateCount": 10,
         "rateMax": 10
@@ -172,7 +153,7 @@ const surveyJson = {
        },
        {
         "type": "text",
-        "name": "question10",
+        "name": "AntwortSchlaf",
         "visibleIf": "{Schlaf} = false",
         "title": "Gibt es derzeit besondere Ereignisse oder Umstände, die Ihren Stresslevel oder Schlaf beeinflussen? (Bitte beschreiben Sie kurz.) Antwortfeld:",
         "description": "Diese Frage ist optional"
@@ -405,6 +386,8 @@ initChartBook({ Survey });
 
 console.log('Init Chart Land');
 initChartLand({ Survey });
+
+
 
 @Component({
   selector: 'app-root',
