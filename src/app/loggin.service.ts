@@ -25,10 +25,11 @@ export class LoggingService {
       testOrder: localStorage.getItem('testOrder'),
       colorOrder: localStorage.getItem('colorOrder'),
     };
-    const headers = new HttpHeaders();
-    headers.set('content-type', 'application/json');
-    headers.set('accept', 'application/json');
-    headers.set('Authorization', 'Bearer ae12bc42');
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Accept': 'application/json',
+      'Authorization': 'Bearer ae12bc42'
+    });
     // console.log('test:', test);
     const url = isDevMode()
       ? 'http://localhost:3000/log/chrissy-ma'
@@ -37,11 +38,13 @@ export class LoggingService {
       .post(url, data, { headers: headers })
       .pipe(take(1))
       .subscribe({
+        complete: () => { console.log('Logging Success'); },
         error: (err: HttpErrorResponse) => {
           if (err.error instanceof Error) {
               console.log('Client-side error occured.');
           } else {
               console.log('Server-side error occured.');
+              console.log(err.error);
           }
         }
       });
