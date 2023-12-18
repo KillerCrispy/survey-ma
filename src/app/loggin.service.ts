@@ -34,7 +34,7 @@ export class LoggingService {
       ? 'http://localhost:3000/log/chrissy-ma'
       : 'http://itv21.informatik.htw-dresden.de:3000/log/chrissy-ma';
     this.http
-      .post(url, test, { headers: headers })
+      .post(url, data, { headers: headers })
       .pipe(take(1))
       .subscribe({
         error: (err: HttpErrorResponse) => {
