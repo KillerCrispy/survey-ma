@@ -268,7 +268,7 @@ export function initChartLand({ Survey }: { Survey: any }) {
 
             break;
           default:
-            console.log('default die nummer in r gibts nicht');
+           // console.log('default die nummer in r gibts nicht');
            
             break;
         }

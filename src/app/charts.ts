@@ -129,21 +129,21 @@ export function initChartMusic({ Survey }: { Survey: any }) {
       }
 
         var rgb = color!.match(/\d+/g);
-        console.log('RGB Ausgabe:',rgb);
+     //   console.log('RGB Ausgabe:',rgb);
 
         let colors: string[] = new Array<string>(6);
         if (rgb) {
 
-            console.log('Colors 0 leer:',colors[0]);
+        //    console.log('Colors 0 leer:',colors[0]);
 
 
             let one = Number.parseInt(rgb[0]);
             let two = Number.parseInt(rgb[1]);
             let three = Number.parseInt(rgb[2]);
 
-           console.log('R:',one);
-           console.log('G:',two);
-           console.log('B:',three);
+          // console.log('R:',one);
+         //  console.log('G:',two);
+        //   console.log('B:',three);
 
 
             //Farbschema wählen
@@ -283,7 +283,7 @@ export function initChartMusic({ Survey }: { Survey: any }) {
 
                 break;
                 default:
-                    console.log('Digga steht nix drin');
+           //         console.log('Digga steht nix drin');
                     break;
 
 
@@ -494,7 +494,7 @@ export function initChartMusic({ Survey }: { Survey: any }) {
       }
     }
 
-    console.log('widget', widget.htmlTemplate);
+   // console.log('widget', widget.htmlTemplate);
 
     Survey.CustomWidgetCollection.Instance.addCustomWidget(widget, "customtype");
   }

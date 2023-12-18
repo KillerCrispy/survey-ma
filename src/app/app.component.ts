@@ -439,16 +439,16 @@ const surveyJson = {
   ],
 };
 
-console.log('Init Color Picker... ');
+//console.log('Init Color Picker... ');
 initColorPicker(Survey);
 
-console.log('Init Chart Music');
+//console.log('Init Chart Music');
 initChartMusic({ Survey });
 
-console.log('Init Chart Book');
+//console.log('Init Chart Book');
 initChartBook({ Survey });
 
-console.log('Init Chart Land');
+//console.log('Init Chart Land');
 initChartLand({ Survey });
 
 

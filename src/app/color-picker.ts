@@ -116,7 +116,7 @@ export function initColorPicker(Survey: any) {
       <div class="q2"  style="display:none" style="margin-top: 20px">
      
       <h4> Welche Farbe spiegelt am wenigsten <br>
-     Ihre Persönlichkeit wieder? </h4>
+     Ihre Persönlichkeit wider? </h4>
       </div>
 
       <div class="q3" style="display:none" style="margin-top: 20px; width:480px ">
