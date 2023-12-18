@@ -1,22 +1,45 @@
 {
     "testOrder": 123,
-    "Datenschutzerklaerung" : true,       //Datenschutz halt, kein Plan
-    "LastName" : "Nachname",                //Nachname 
-    "FirstName": "Vorname",                 //Vorname
-    "Alter"    : 23,                      //Alter
-    "E-Mail"   : "E-Mail",                  //Email
-    "Arbeit"   : "Arbeit",                  //Studiengang/Ausbildung/Berufsbezeichung
-    "BeeinträchtigungSehen" :  true,      // Beeinträchtigung beim Sehen
-    "AntwortBeeinträchtigung": "Brille",    //Antwort Beeinträchtigung
-    "RatingStress": 10,                   //Stresslevel
-    "Schlaf": true,                       // War schlaf gut ?
+    "colorOrder": 123,
+    "Datenschutzerklaerung" : true,       
+    "LastName" : "Nachname",               
+    "FirstName": "Vorname",                 
+    "Alter"    : 23,                      
+    "E-Mail"   : "E-Mail",                  
+    "Arbeit"   : "Arbeit",                 
+    "BeeinträchtigungSehen" :  true,     
+    "AntwortBeeinträchtigung": "Brille",   
+    "RatingStress": 10,                  
+    "Schlaf": true,                     
     "AntwortSchlaf": "Krank",
 
 
-    "question30": "Nadine",
-    "question31": "Nadine",
-    "question32": "Nadine",
-    "question33": "Nadine"
+    "reise_most" : "Name",
+    "reise_never_africa": "Name",
+    "reisen_most_continent": "Name",
+    "reisen_never_Asia" : "Name",
+    "reisen_moreThan_america": "Name",
+
+    "book_most" : "Name",
+    "book_noSachbuch" : "Name",
+    "book_mostGenre" : "Name",
+    "book_leastKrimi" : "Name",
+    "book_mostSachbuch" : "Name",
+
+    "music_most" : "Name",
+    "music_noTechno" : "Name",
+    "music_mostGenre" : "Name",
+    "music_mostRock" : "Name",
+    "music_lessPop" : "Name"
+
+    
+
+
+    
+
+
+
+
     
 
 
@@ -26,12 +49,9 @@
 
 
 
-    //"surveyData": {"FirstName": "Vorname", }
+   
 
 
 
 }
 
-//gehen Unterobjekte ? 
-
-//Gehen Arrays ? 
