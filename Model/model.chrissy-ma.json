@@ -30,7 +30,7 @@
     "music_noTechno" : "Name",
     "music_mostGenre" : "Name",
     "music_mostRock" : "Name",
-    "music_lessPop" : "Name",
+    "music_lessPop" : "Name"
 
     
 
@@ -49,12 +49,9 @@
 
 
 
-    //"surveyData": {"FirstName": "Vorname", }
+   
 
 
 
 }
 
-//gehen Unterobjekte ? 
-
-//Gehen Arrays ? 
