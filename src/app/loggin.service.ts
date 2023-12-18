@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
+import { isDevMode } from '@angular/core';
 import { take } from 'rxjs';
 import { COLOR_NAMES } from './constants';
 
@@ -24,10 +25,28 @@ export class LoggingService {
       testOrder: localStorage.getItem('testOrder'),
       colorOrder: localStorage.getItem('colorOrder'),
     };
-   // console.log('test:', test);
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Accept': 'application/json',
+      'Authorization': 'Bearer ae12bc42'
+    });
+    // console.log('test:', test);
+    const url = isDevMode()
+      ? 'http://localhost:3000/log/chrissy-ma'
+      : 'http://itv21.informatik.htw-dresden.de:3000/log/chrissy-ma';
     this.http
-      .post('http://localhost:3000/log/chrissy-ma', test)
+      .post(url, data, { headers: headers })
       .pipe(take(1))
-      .subscribe((result) => console.log(result));
+      .subscribe({
+        complete: () => { console.log('Logging Success'); },
+        error: (err: HttpErrorResponse) => {
+          if (err.error instanceof Error) {
+              console.log('Client-side error occured.');
+          } else {
+              console.log('Server-side error occured.');
+              console.log(err.error);
+          }
+        }
+      });
   }
 }
