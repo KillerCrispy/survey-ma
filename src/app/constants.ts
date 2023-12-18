@@ -1,10 +1,10 @@
 export const COLOR_NAMES = [
-  'Lieblingsfarbe',
-  'NoLieblingsFarbe1',
-  'NoLieblingsFarbe2',
+  'Lieblingsfarbe',  // 0
+  'NoLieblingsFarbe1', // 1
+  'NoLieblingsFarbe2', // 2
 ];
 
-export const TEST_CASES = ['123', '231', '312', '132'];
+export const TEST_CASES = ['123', '231', '312', '132','321','213']; //Mögliche Permutationen 6
 
 export enum EDiagram {
   'land',

@@ -28,53 +28,56 @@ export function initChartBook({ Survey }: { Survey: any }) {
 
     afterRender: function (question: any, el: any) {
       // NoLieblingsFarbe1
-      // NoLieblingsFarbe1
+      // NoLieblingsFarbe2
       // LieblingsFarbe
 
       const testOrder = localStorage.getItem('testOrder');
       const colorOrder = localStorage.getItem('colorOrder');
 
+
+
+
       let color: string | null;
 
       if (testOrder === '123') {
         if (colorOrder === '1') {
-          color = localStorage.getItem(COLOR_NAMES[2]);
+          color = localStorage.getItem(COLOR_NAMES[1]);
         }
 
         if (colorOrder === '2') {
-          color = localStorage.getItem(COLOR_NAMES[2]);
+          color = localStorage.getItem(COLOR_NAMES[0]);
         }
 
         if (colorOrder === '3') {
-          color = localStorage.getItem(COLOR_NAMES[0]);
+          color = localStorage.getItem(COLOR_NAMES[2]);
         }
       }
 
       if (testOrder === '231') {
         if (colorOrder === '1') {
-          color = localStorage.getItem(COLOR_NAMES[2]);
-        }
-
-        if (colorOrder === '2') {
           color = localStorage.getItem(COLOR_NAMES[0]);
         }
 
-        if (colorOrder === '3') {
+        if (colorOrder === '2') {
           color = localStorage.getItem(COLOR_NAMES[2]);
+        }
+
+        if (colorOrder === '3') {
+          color = localStorage.getItem(COLOR_NAMES[1]);
         }
       }
 
       if (testOrder === '312') {
         if (colorOrder === '1') {
-          color = localStorage.getItem(COLOR_NAMES[0]);
+          color = localStorage.getItem(COLOR_NAMES[2]);
         }
 
         if (colorOrder === '2') {
-          color = localStorage.getItem(COLOR_NAMES[2]);
+          color = localStorage.getItem(COLOR_NAMES[1]);
         }
 
         if (colorOrder === '3') {
-          color = localStorage.getItem(COLOR_NAMES[2]);
+          color = localStorage.getItem(COLOR_NAMES[0]);
         }
       }
 
@@ -84,13 +87,46 @@ export function initChartBook({ Survey }: { Survey: any }) {
         }
 
         if (colorOrder === '2') {
-          color = localStorage.getItem(COLOR_NAMES[0]);
+          color = localStorage.getItem(COLOR_NAMES[1]);
         }
 
         if (colorOrder === '3') {
-          color = localStorage.getItem(COLOR_NAMES[2]);
+          color = localStorage.getItem(COLOR_NAMES[0]);
         }
       }
+
+
+    if (testOrder === '213') {
+      if (colorOrder === '1') {
+        color = localStorage.getItem(COLOR_NAMES[0]);
+      }
+
+      if (colorOrder === '2') {
+        color = localStorage.getItem(COLOR_NAMES[2]);
+      }
+
+      if (colorOrder === '3') {
+        color = localStorage.getItem(COLOR_NAMES[1]);
+      }
+
+      
+    }
+
+    if (testOrder === '321') {
+      if (colorOrder === '1') {
+        color = localStorage.getItem(COLOR_NAMES[1]);
+      }
+
+      if (colorOrder === '2') {
+        color = localStorage.getItem(COLOR_NAMES[0]);
+      }
+
+      if (colorOrder === '3') {
+        color = localStorage.getItem(COLOR_NAMES[2]);
+      }
+
+      
+    }
 
       var rgb = color!.match(/\d+/g);
       console.log('RGB Ausgabe:', rgb);
@@ -150,8 +186,8 @@ export function initChartBook({ Survey }: { Survey: any }) {
 
             break;
 
-          case 288: //Farbe 5 ROT
-            colors[0] = 'rgb(288,6,19)';
+          case 228: //Farbe 5 ROT
+            colors[0] = 'rgb(228,6,19)';
             colors[1] = 'rgb(238,68,78)';
             colors[2] = 'rgb(145,21,21)';
             colors[3] = 'rgb(255,0,0)';
@@ -283,8 +319,8 @@ export function initChartBook({ Survey }: { Survey: any }) {
             labels: ['Elli', 'Nadine', 'Max', 'Paul'],
             datasets: [
               {
-                label: 'Lieblingssongs insgesamt',
-                data: [566, 245, 378, 331],
+                label: 'Bücher insgesamt',
+                data: [45,29,24,56],
                 backgroundColor: colors[0] ?? 'rgba(54, 163, 235, 1)',
                 borderColor: 'rgb(10,10,10)',
                 borderWidth: 1,
@@ -292,8 +328,8 @@ export function initChartBook({ Survey }: { Survey: any }) {
                 fill: true,
               },
               {
-                label: 'Metal',
-                data: [223, 12, 311, 65],
+                label: 'Krimis',
+                data: [6,17,1,4],
                 backgroundColor: colors[1] ?? 'rgba(0, 106, 176, 1)',
                 borderColor: 'rgba(0,80,132,1)',
                 borderWidth: 1,
@@ -301,8 +337,8 @@ export function initChartBook({ Survey }: { Survey: any }) {
                 fill: true,
               },
               {
-                label: 'HipHop',
-                data: [123, 89, 22, 46],
+                label: 'Fantasy',
+                data: [3,5,2,15],
                 backgroundColor: colors[2] ?? 'rgba(111, 198, 255, 1)',
                 borderColor: 'rgba(83,149,191,1)',
                 borderWidth: 1,
@@ -310,8 +346,8 @@ export function initChartBook({ Survey }: { Survey: any }) {
                 fill: true,
               },
               {
-                label: 'Pop',
-                data: [109, 77, 3, 55],
+                label: 'Sachbuch',
+                data: [22,0,6,7],
                 backgroundColor: colors[3] ?? 'rgba(37, 90, 125, 1)',
                 borderColor: 'rgba(28,68,94,1)',
                 borderWidth: 1,
@@ -319,8 +355,8 @@ export function initChartBook({ Survey }: { Survey: any }) {
                 fill: true,
               },
               {
-                label: 'Techno',
-                data: [77, 45, 29, 0],
+                label: 'Liebesromane',
+                data: [8,2,13,18],
                 backgroundColor: colors[4] ?? 'rgba(192, 228, 252, 1)',
                 borderColor: 'rgba(144,171,189,1)',
                 borderWidth: 1,
@@ -328,8 +364,8 @@ export function initChartBook({ Survey }: { Survey: any }) {
                 fill: true,
               },
               {
-                label: 'Rock',
-                data: [34, 22, 13, 165],
+                label: 'Science Fiction',
+                data: [6,4,2,12],
                 backgroundColor: colors[5] ?? 'rgba(114, 158, 187, 1)',
                 borderColor: 'rgba(86,119,140,1)',
                 borderWidth: 1,
@@ -366,7 +402,7 @@ export function initChartBook({ Survey }: { Survey: any }) {
             title: {
               display: true,
               position: 'top',
-              text: 'Musikgeschmack',
+              text: 'Buchgeschmack',
               fontSize: 32,
             },
             plugins: {

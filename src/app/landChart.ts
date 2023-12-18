@@ -27,22 +27,25 @@ export function initChartLand({ Survey }: { Survey: any }) {
     htmlTemplate: `Test <canvas width="550" height="700" id="land"></canvas>`,
 
     afterRender: function (question: any, el: any) {
-      // NoLieblingsFarbe1
-      // NoLieblingsFarbe1
-      // LieblingsFarbe
+       // LieblingsFarbe  	  0
+       // NoLieblingsFarbe1   1
+       // NoLieblingsFarbe2   2
+     
 
       const testOrder = localStorage.getItem('testOrder');
       const colorOrder = localStorage.getItem('colorOrder');
 
       let color: string | null;
 
-      if (testOrder === '123') {
+    
+
+      if (testOrder === '123') {   // Land Buch Musik 
         if (colorOrder === '1') {
-          color = localStorage.getItem(COLOR_NAMES[0]);
+          color = localStorage.getItem(COLOR_NAMES[0]); 
         }
 
         if (colorOrder === '2') {
-          color = localStorage.getItem(COLOR_NAMES[1]);
+          color = localStorage.getItem(COLOR_NAMES[2]);
         }
 
         if (colorOrder === '3') {
@@ -52,7 +55,7 @@ export function initChartLand({ Survey }: { Survey: any }) {
 
       if (testOrder === '231') {
         if (colorOrder === '1') {
-          color = localStorage.getItem(COLOR_NAMES[1]);
+          color = localStorage.getItem(COLOR_NAMES[2]);
         }
 
         if (colorOrder === '2') {
@@ -74,7 +77,7 @@ export function initChartLand({ Survey }: { Survey: any }) {
         }
 
         if (colorOrder === '3') {
-          color = localStorage.getItem(COLOR_NAMES[1]);
+          color = localStorage.getItem(COLOR_NAMES[2]);
         }
       }
 
@@ -84,28 +87,63 @@ export function initChartLand({ Survey }: { Survey: any }) {
         }
 
         if (colorOrder === '2') {
-          color = localStorage.getItem(COLOR_NAMES[1]);
+          color = localStorage.getItem(COLOR_NAMES[2]);
         }
 
         if (colorOrder === '3') {
           color = localStorage.getItem(COLOR_NAMES[1]);
         }
+
+        
+      }
+
+      if (testOrder === '213') {
+        if (colorOrder === '1') {
+          color = localStorage.getItem(COLOR_NAMES[1]);
+        }
+
+        if (colorOrder === '2') {
+          color = localStorage.getItem(COLOR_NAMES[0]);
+        }
+
+        if (colorOrder === '3') {
+          color = localStorage.getItem(COLOR_NAMES[2]);
+        }
+
+        
+      }
+
+      if (testOrder === '321') {
+        if (colorOrder === '1') {
+          color = localStorage.getItem(COLOR_NAMES[2]);
+        }
+
+        if (colorOrder === '2') {
+          color = localStorage.getItem(COLOR_NAMES[1]);
+        }
+
+        if (colorOrder === '3') {
+          color = localStorage.getItem(COLOR_NAMES[0]);
+        }
+
+        
       }
 
       var rgb = color!.match(/\d+/g);
-      console.log('RGB Ausgabe:', rgb);
+
+    
+  
 
       let colors: string[] = new Array<string>(6);
       if (rgb) {
-        console.log('Colors 0 leer:', colors[0]);
+        
 
         let one = Number.parseInt(rgb[0]);
         let two = Number.parseInt(rgb[1]);
         let three = Number.parseInt(rgb[2]);
 
-        console.log('R:', one);
-        console.log('G:', two);
-        console.log('B:', three);
+    
+
 
         //Farbschema wählen
 
@@ -150,8 +188,8 @@ export function initChartLand({ Survey }: { Survey: any }) {
 
             break;
 
-          case 288: //Farbe 5 ROT
-            colors[0] = 'rgb(288,6,19)';
+          case 228: //Farbe 5 ROT
+            colors[0] = 'rgb(228,6,19)';
             colors[1] = 'rgb(238,68,78)';
             colors[2] = 'rgb(145,21,21)';
             colors[3] = 'rgb(255,0,0)';
@@ -230,7 +268,8 @@ export function initChartLand({ Survey }: { Survey: any }) {
 
             break;
           default:
-            console.log('Digga steht nix drin');
+            console.log('default die nummer in r gibts nicht');
+           
             break;
         }
 
@@ -283,17 +322,18 @@ export function initChartLand({ Survey }: { Survey: any }) {
             labels: ['Elli', 'Nadine', 'Max', 'Paul'],
             datasets: [
               {
-                label: 'Lieblingssongs insgesamt',
-                data: [566, 245, 378, 331],
+                label: 'Besuchte Länder',
+                data: [16,4,22,9],
                 backgroundColor: colors[0] ?? 'rgba(54, 163, 235, 1)',
                 borderColor: 'rgb(10,10,10)',
                 borderWidth: 1,
                 order: 10,
                 fill: true,
+                
               },
               {
-                label: 'Metal',
-                data: [223, 12, 311, 65],
+                label: 'Länder in Europa',
+                data: [7,3,8,3],
                 backgroundColor: colors[1] ?? 'rgba(0, 106, 176, 1)',
                 borderColor: 'rgba(0,80,132,1)',
                 borderWidth: 1,
@@ -301,8 +341,8 @@ export function initChartLand({ Survey }: { Survey: any }) {
                 fill: true,
               },
               {
-                label: 'HipHop',
-                data: [123, 89, 22, 46],
+                label: 'Länder in Asien',
+                data: [2,0,7,3],
                 backgroundColor: colors[2] ?? 'rgba(111, 198, 255, 1)',
                 borderColor: 'rgba(83,149,191,1)',
                 borderWidth: 1,
@@ -310,8 +350,8 @@ export function initChartLand({ Survey }: { Survey: any }) {
                 fill: true,
               },
               {
-                label: 'Pop',
-                data: [109, 77, 3, 55],
+                label: 'Länder in Nord Amerika',
+                data: [4,0,4,2],
                 backgroundColor: colors[3] ?? 'rgba(37, 90, 125, 1)',
                 borderColor: 'rgba(28,68,94,1)',
                 borderWidth: 1,
@@ -319,8 +359,8 @@ export function initChartLand({ Survey }: { Survey: any }) {
                 fill: true,
               },
               {
-                label: 'Techno',
-                data: [77, 45, 29, 0],
+                label: 'Länder in Süd Amerika',
+                data: [2,1,3,0],
                 backgroundColor: colors[4] ?? 'rgba(192, 228, 252, 1)',
                 borderColor: 'rgba(144,171,189,1)',
                 borderWidth: 1,
@@ -328,8 +368,8 @@ export function initChartLand({ Survey }: { Survey: any }) {
                 fill: true,
               },
               {
-                label: 'Rock',
-                data: [34, 22, 13, 165],
+                label: 'Länder in Afrika',
+                data: [1,0,0,1],
                 backgroundColor: colors[5] ?? 'rgba(114, 158, 187, 1)',
                 borderColor: 'rgba(86,119,140,1)',
                 borderWidth: 1,
@@ -366,7 +406,7 @@ export function initChartLand({ Survey }: { Survey: any }) {
             title: {
               display: true,
               position: 'top',
-              text: 'Musikgeschmack',
+              text: 'Besuchte Länder',
               fontSize: 32,
             },
             plugins: {

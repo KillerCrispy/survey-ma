@@ -11,78 +11,83 @@ import { initChartMusic } from './charts';
 import { initChartBook } from './buchChart';
 import { initChartLand } from './landChart';
 import { TEST_CASES } from './constants';
+import { timestamp } from 'rxjs';
 
 const surveyJson = {
   title: 'ERINNERBARKEIT VON INFORMATIONSVISUALISIERUNGEN',
   logo: 'https://api.surveyjs.io/private/Surveys/files?name=fde65c11-7c39-49e5-98e1-813931fd51a3',
   logoPosition: 'right',
   pages: [
+    { name: 'page0',
+    id: 'Page0',
+    elements: [
+      {
+        type: 'html',
+        name: 'Einleitung Umfrage',
+        html: `<div style="background-color: white; padding-top: 32px; padding-left: 40px; padding-bottom: 40px; padding-right: 40px; box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.15); border-radius: 4px">
+        <body>
+        <p>
+        Sehr geehrte Teilnehmende,
+        </p>
+        <p>
+            mein Name ist <strong>Christine Müller</strong>, und ich studiere im Masterprogramm <strong>Angewandte Informatik mit dem Schwerpunkt Technische Visualistik</strong> an der HTW Dresden. Im Rahmen meiner Abschlussarbeit führe ich die Studie <strong>„Erinnerbarkeit von Informationsvisualisierung“</strong> durch.
+        </p>
+        <p>
+            Diese Umfrage gliedert sich in <strong>zwei Abschnitte</strong>. Der erste Abschnitt, den Sie jetzt bearbeiten, wird etwa <strong>5-10 Minuten</strong> in Anspruch nehmen. Der zweite Abschnitt, der ca. <strong>5 Minuten</strong> dauern wird, findet in zwei Wochen statt. Ich werde Sie dafür erneut kontaktieren. <strong>Ihre Teilnahme an beiden Abschnitten der Umfrage ist wichtig</strong>.
+        </p>
+        <p>
+            Bitte lesen Sie <strong>jede Aufgabenstellung in dieser Umfrage gründlich durch</strong>. Sie werden durch die verschiedenen Aufgaben geleitet, um sicherzustellen, dass alle relevanten Aspekte der Studie abgedeckt werden.
+        </p>
+        <p>
+            Vielen Dank im Voraus für <strong>Ihre Zeit und Ihre aktive Teilnahme</strong>.
+        </p>
+        <p>
+            Mit freundlichen Grüßen,<br>
+            <strong>Christine Müller</strong>
+        </p>
+    </body>
+        </div>`
+      }
+    ]
+  },
     {
+      
       name: 'page1',
-      id: 'shit3',
+      id: 'Page1',
       elements: [
         {
           type: 'html',
           name: 'Datenschutzerklärung',
-          html:/* `
-         <div style="background-color: white; padding-top: 32px; padding-left: 40px; padding-bottom: 40px; padding-right: 40px; box-shadow:  0px 1px 2px 0px rgba(0, 0, 0, 0.15); border-radius: 4px">
-        Liebe/r Untersuchungsteilnehmer/in!<br />
-        <br />Es folgt eine Information über deine Rechte und Pflichten als Versuchsperson sowie
-         über unsere Verpflichtungen als Versuchsleiter/ in: <br /><br /> 1. Freiwilligkeit der
-          Teilnahme Du hast dich freiwillig dafür entschieden, an dieser Untersuchung teilzunehmen.
-           Wir danken dir sehr für diese Bereitschaft, mit deiner Mitarbeit zum Zustandekommen
-           unserer Untersuchung beizutragen.  <br /><br /> 2. Schutz vor Schädigung und Belastung
-            Außerdem möchten wir versichern, dass wir uns bemühen, dir in diesem Experiment keine
-             seelischen oder körperlichen Belastungen zuzumuten und dass das Wohlergehen der
-             Versuchsteilnehmer/innen Vorrang vor reinem Interesse an signifikanten Ergebnissen hat.
-              <br /><br /> 3. Abbruchrecht Sollten nun entgegen unseren Bemühungen während des Versuchs
-               Belastungen auftreten, die du für zu schwerwiegend erachtest, so hast du die Möglichkeit,
-                die Untersuchung abzubrechen.Aufgrund des Abbruchs musst du aber keinerlei negative
-                 Konsequenzen befürchten. <br /><br />  4. Recht auf postexperimentelle Aufklärung
-                 Wir versichern, dass nach Abschluss der Erhebungsphase der einzelnen Experimente
-                  auf Nachfrage sämtliche gewünschten Informationen über Ablauf, Zweck und Ergebnis
-                   des Versuchs gegeben werden können (Kontaktmöglichkeit s. unten).<br /><br />
-                    5. Pflichten als Versuchsperson Diesen geschilderten Rechten jeder Versuchsperson
-                    stehen natürlich auch einige nachvollziehbare Pflichten gegenüber.
-                    Die Planung und Durchführung einer Untersuchung erfordert viel Zeit und Mühe.
-                     <br />Es ist deshalb wichtig, dass du versuchst, die Aufgabenstellungen der
-                      Untersuchung so gut wie möglich zu erfüllen. Dazu gehört, dass du offen und
-                       ehrlich auf die Fragen antwortest und den Versuch ernst nimmst.
-                       Eine uninteressierte und oberflächliche Mitarbeit gefährdet die Erreichung der
-                       Untersuchungsziele erheblich, und es wäre sehr schade, wenn dadurch die ganze
-                       Arbeit, die in die Vorbereitung des Experiments gesteckt worden ist, umsonst
-                        gewesen wäre.<br /><br />  6. Gewährleistung der Anonymität Abschließend
-                        wollen wir darauf hinweisen, dass deine Antworten streng vertraulich behandelt
-                        werden. Zu diesem Zweck wird ein Codewort gebraucht, das nur du kennst und
-                        das die Zuordnung der Daten zu deiner Person verhindert.<br /> Wir danken
-                         dir noch einmal sehr für deine Teilnahme!
-        </div>`
-        */
+          html:
 
         `
         <div style="background-color: white; padding-top: 32px; padding-left: 40px; padding-bottom: 40px; padding-right: 40px; box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.15); border-radius: 4px">
-        <p style="font-weight: bold;">Liebe/r Untersuchungsteilnehmer/in!</p>
-        <p>Es folgt eine Information über deine Rechte und Pflichten als Versuchsperson sowie über unsere Verpflichtungen als Versuchsleiter/ in:</p>
+        <p style="font-weight: bold;">
+        Sehr geehrte Teilnehmende der Untersuchung,</p>
+        <p>hiermit erhalten Sie Informationen über Ihre Rechte und Pflichten als Versuchsperson sowie unsere Verpflichtungen als Versuchsleitung:</p>
         <br />
         <p style="font-weight: bold;">1. Freiwilligkeit der Teilnahme</p>
-        <p>Du hast dich freiwillig dafür entschieden, an dieser Untersuchung teilzunehmen. Wir danken dir sehr für diese Bereitschaft, mit deiner Mitarbeit zum Zustandekommen unserer Untersuchung beizutragen.</p>
+        <p>Sie haben sich freiwillig entschieden, an dieser Untersuchung teilzunehmen. 
+        Wir danken Ihnen für Ihre Bereitschaft, mit Ihrer Mitarbeit zum Gelingen unserer Untersuchung beizutragen.</p>
         <br />
         <p style="font-weight: bold;">2. Schutz vor Schädigung und Belastung</p>
-        <p>Außerdem möchten wir versichern, dass wir uns bemühen, dir in diesem Experiment keine seelischen oder körperlichen Belastungen zuzumuten und dass das Wohlergehen der Versuchsteilnehmer/innen Vorrang vor reinem Interesse an signifikanten Ergebnissen hat.</p>
+        <p>Wir versichern, dass wir uns bemühen, Ihnen in diesem Experiment keine seelischen oder körperlichen Belastungen zuzumuten. 
+        Das Wohlbefinden der Teilnehmenden hat Vorrang vor dem reinen Interesse an signifikanten Ergebnissen.</p>
         <br />
         <p style="font-weight: bold;">3. Abbruchrecht</p>
-        <p>Sollten nun entgegen unseren Bemühungen während des Versuchs Belastungen auftreten, die du für zu schwerwiegend erachtest, so hast du die Möglichkeit, die Untersuchung abzubrechen. Aufgrund des Abbruchs musst du aber keinerlei negative Konsequenzen befürchten.</p>
+        <p>Sollten während des Versuchs Belastungen auftreten, die Sie als zu schwerwiegend empfinden, haben Sie die Möglichkeit,
+         die Untersuchung abzubrechen. Es entstehen Ihnen dadurch keine negativen Konsequenzen.</p>
         <br />
         <p style="font-weight: bold;">4. Recht auf postexperimentelle Aufklärung</p>
-        <p>Wir versichern, dass nach Abschluss der Erhebungsphase der einzelnen Experimente auf Nachfrage sämtliche gewünschten Informationen über Ablauf, Zweck und Ergebnis des Versuchs gegeben werden können (Kontaktmöglichkeit s. unten).</p>
+        <p>Nach Abschluss der Erhebungsphase der einzelnen Experimente werden auf Nachfrage alle gewünschten Informationen über den Ablauf,
+         Zweck und die Ergebnisse des Versuchs bereitgestellt.</p>
         <br />
         <p style="font-weight: bold;">5. Pflichten als Versuchsperson</p>
-        <p>Den geschilderten Rechten jeder Versuchsperson stehen natürlich auch einige nachvollziehbare Pflichten gegenüber. Die Planung und Durchführung einer Untersuchung erfordert viel Zeit und Mühe.</p>
-        <p>Es ist deshalb wichtig, dass du versuchst, die Aufgabenstellungen der Untersuchung so gut wie möglich zu erfüllen. Dazu gehört, dass du offen und ehrlich auf die Fragen antwortest und den Versuch ernst nimmst. Eine uninteressierte und oberflächliche Mitarbeit gefährdet die Erreichung der Untersuchungsziele erheblich, und es wäre sehr schade, wenn dadurch die ganze Arbeit, die in die Vorbereitung des Experiments gesteckt worden ist, umsonst gewesen wäre.</p>
-        <br />
+        <p>
+        Ihnen als Teilnehmende der Untersuchung obliegen einige nachvollziehbare Pflichten. Die Planung und Durchführung einer Untersuchung erfordert viel Zeit und Mühe. Daher ist es wichtig, dass Sie die Aufgabenstellungen der Untersuchung bestmöglich erfüllen, offen und ehrlich auf Fragen antworten und den Versuch ernst nehmen. Eine uninteressierte und oberflächliche Mitarbeit kann die Erreichung der Untersuchungsziele erheblich gefährden.</p>
+           <br />
         <p style="font-weight: bold;">6. Gewährleistung der Anonymität</p>
-        <p>Deine Antworten werden vertraulich behandelt und anonymisiert. Sie dienen ausschließlich der Auswertung im Rahmen dieser Masterarbeit. Wir danken dir herzlich für deine Teilnahme! Wir danken dir noch einmal sehr für deine Teilnahme!</p>
-    </div>
+        <p>hre Antworten werden vertraulich behandelt und anonymisiert. Sie dienen ausschließlich der Auswertung im Rahmen dieser Masterarbeit. Wir danken Ihnen herzlich für Ihre Teilnahme! </div>
     
 
         `
@@ -101,6 +106,16 @@ const surveyJson = {
     {
       "name": "page2",
       "elements": [
+        {
+          type: 'html',
+          name: 'Datenschutzerklärung',
+          html: `<div style="background-color: white; padding-top: 32px; padding-left: 40px; padding-bottom: 40px; padding-right: 40px; box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.15); border-radius: 4px">
+          <p>
+          Um einen umfassenden Überblick zu gewährleisten und die Ergebnisse unserer Umfrage besser einordnen zu können, 
+          bitten wir Sie zunächst um die Angabe einiger demografischer Informationen.
+          </p>
+          </div>`
+         },
        {
         "type": "text",
         "name": "LastName",
@@ -159,18 +174,55 @@ const surveyJson = {
         "description": "Diese Frage ist optional"
        }
       ],
-      "title": "Demographische Informationen"
+      //"title": "Demographische Informationen"
      },
     {
       name: 'page3',
       elements: [
         {
           type: 'html',
-          name: 'Farbpräferenzermittlung',
-          html: '<p>In dieser Umfrage verwenden wir ein Ausschlussverfahren, um Ihre Farbpräferenzen zu ermitteln. Sie werden durch eine Serie von Runden geführt, in denen Sie jeweils aus einer Auswahl an Farben wählen. Jede Runde besteht aus einer Frage, die auf bestimmte Farbattribute abzielt.</p><h3>So funktioniert die Umfrage:</h3><ol><li><strong>Jede Runde stellt eine Frage:</strong> Die Fragen sind so gestaltet, dass sie auf verschiedene Aspekte von Farben abzielen.</li><li><strong>Wählen Sie eine Farbe:</strong> Basierend auf Ihrer Einschätzung der Frage wählen Sie eine Farbe, die Ihrer Meinung nach am besten passt.</li><li><strong>Ausschlussverfahren:</strong> Mit jeder beantworteten Frage verringert sich die Anzahl der verbleibenden Farben.</li><li><strong>Ermittlung Ihrer Präferenzen:</strong> Nach Abschluss aller Runden erhalten Sie eine Auswertung, die Ihre Farbpräferenzen aufzeigt.</li></ol><p>Bitte beachten Sie, dass es bei dieser Umfrage nicht um die Ermittlung einer einzelnen bevorzugten Farbe geht, sondern um das Verständnis Ihrer generellen Neigung zu verschiedenen Farben.</p>',
-        },
+          name: 'Einleitung und Erlärung',
+          html: `
+          <div style="background-color: white; padding-top: 32px; padding-left: 40px; padding-bottom: 40px; padding-right: 40px; box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.15); border-radius: 4px">
+          <body>
+   
+    <p>
+        Im folgenden Abschnitt der Umfrage werden Sie gebeten, eine <strong>besondere Art von Fragen</strong> zu beantworten. Bei jeder Frage wählen Sie bitte <strong>eine Farbe</strong> aus, die Ihrer Meinung nach am besten zu der gestellten Frage passt. Es geht hierbei um <strong>Ihre persönlichen Wahrnehmungen und Assoziationen</strong> mit den Fragen durch Farben.
+    </p>
+    <p>
+        Bitte beachten Sie, dass für jede Frage <strong>nur eine Farbe</strong> gewählt werden kann. Ihre Auswahl sollte die Farbe sein, die Sie spontan mit der jeweiligen Frage in Verbindung bringen oder die Ihrer Meinung nach am besten die Essenz der Frage einfängt.
+    </p>
+    <p>
+        Um die Farben richtig beurteilen zu können, sorgen Sie bitte für <strong>gute Lichtverhältnisse</strong>. Wir empfehlen Ihnen, diese Umfrage auf einem <strong>Computer</strong> durchzuführen, um eine optimale Farbdarstellung zu gewährleisten.
+    </p>
+
+</body>
+          </div>
+          `},
+          {
+            type: 'image',
+            name: 'Licht',
+            imageLink: "https://api.surveyjs.io/private/Surveys/files?name=4d115bdc-b579-4b64-b2d9-e70374b2706b",
+            imageFit: 'cover',
+            imageHeight: 'auto',
+            imageWidth: '100%',
+          },
+          {
+            type: 'html',
+            name: 'weiter',
+            html: `
+            <div style="background-color: white; padding-top: 32px; padding-left: 40px; padding-bottom: 40px; padding-right: 40px; box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.15); border-radius: 4px">
+            <body>
+    
+      <p>
+          Wenn Sie bereit sind, klicken Sie bitte auf <strong>„Weiter“</strong>.
+      </p>
+  </body>
+            </div>
+            `},
+         
       ],
-      title: 'Erklärung',
+      //title: 'Erklärung',
     },
     {
       name: 'page4',
@@ -184,194 +236,206 @@ const surveyJson = {
     {
       name: 'page5',
       elements: [
-        {
-          type: 'image',
-          name: 'question15',
-          title: 'Vorstellung Freunde',
-          imageLink:
-            'https://api.surveyjs.io/private/Surveys/files?name=c2906c76-47e2-4747-9a8f-780547c794dc',
-          imageFit: 'cover',
-          imageHeight: 'auto',
-          imageWidth: '100%',
-        },
+           {
+            "type": "html",
+            "name": "Erklärung",
+            html: 
+            `
+            
+    <div style="background-color: white; padding-top: 32px; padding-left: 40px; padding-bottom: 40px; padding-right: 40px; box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.15); border-radius: 4px">
+<body>
+    Im Folgenden finden Sie <b>drei kurze Geschichten</b>, 
+    die Kontext für die anschließenden Daten bietet.
+    Bitte lesen Sie die Geschichten <b>aufmerksam</b> durch und
+    betrachten Sie die <b>beigefügten Balkendiagramme</b>. 
+    Nehmen Sie sich einen Moment Zeit, um <b>beides zu reflektieren</b>.
+    Anschließend werden einige Fragen gestellt, die sich auf <b>Details der jeweiligen Geschichte</b>
+    und die <b>im Diagramm dargestellten Daten</b> beziehen.
+</body>
+</div>
+            `
+           },
+           {
+            "type": "image",
+            "name": "question9",
+            "imageFit": "cover",
+            "imageLink": "https://api.surveyjs.io/private/Surveys/files?name=8660d466-3f26-4b66-b991-94c87e14422a",
+            "imageHeight": "auto",
+            "imageWidth": "100%"
+           }
       ],
-      title: 'ERKLÄRUNG NACHSTER TEIL',
+      title: 'Einführung Diagramme',
     },
     {
       name: 'page6',
       elements: [
         {
-          type: 'comment',
-          name: 'question11',
-          title: 'Diagramm 1',
-          description:
-            'Ich habe meine Freunde letztens gefragt wie oft Sie eigentlich schon verreist sind und wohin. \nDabei haben wir dieses Diagramm erstellt. \n\nBitte schau es dir eine weile an und beantworte dann Fragen dazu.',
-        },
+          type: 'html',
+          name: 'introLand',
+          title: 'Reiselust',
+          html:
+          `
+          <div style="background-color: white; padding-top: 32px; padding-left: 40px; padding-bottom: 40px; padding-right: 40px; box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.15); border-radius: 4px">
+<body>
+            Ich habe meine Freunde letztens gefragt wie oft Sie eigentlich schon verreist sind und wohin. \nDabei haben wir dieses Diagramm erstellt. \n\nBitte schauen Sie es sich eine Weile an und beantworten Sie dann Fragen dazu.
+        </div>
+        </body>
+            `
+          },
         {
           type: 'land',
         },
         {
-          type: 'checkbox',
-          name: 'question13',
+          "type": "image",
+          "name": "Freunde",
+          "imageLink": "https://api.surveyjs.io/private/Surveys/files?name=086021f0-d4a3-4ed2-b899-6d3f87ff845b",
+          "imageFit": "cover",
+          "imageHeight": "auto",
+          "imageWidth": "100%"
+         },
+        {
+          type: 'text',
+          name: 'reisen_most',
           title: 'Wer ist am meisten verreist?',
-          choices: [
-            {
-              value: 'Item 1',
-              text: 'Elli',
-            },
-            {
-              value: 'Item 2',
-              text: 'Nadine',
-            },
-            {
-              value: 'Item 3',
-              text: 'Paul',
-            },
-            {
-              value: 'Item 4',
-              text: 'Max',
-            },
-          ],
         },
         {
           type: 'text',
-          name: 'question14',
+          name: 'reise_never_afrika',
           title: 'Wer war noch nie in Afrika ?',
         },
         {
           type: 'text',
-          name: 'question16',
+          name: 'reisen_most_continent',
           title: 'Welcher Kontinent wurde am meisten besucht ?',
         },
         {
           type: 'text',
-          name: 'question17',
+          name: 'reisen_never_Asia',
           title: 'War jemand noch nie in Asien?',
         },
         {
           type: 'text',
-          name: 'question18',
+          name: 'reisen_moreThan_america',
           title: 'Wer war schon mehr als drei mal in Nord Amerika ?',
         },
+
+      
       ],
-      title: 'Diagramm 1',
+      title: 'Reiselust',
     },
     {
       name: 'page7',
       elements: [
         {
-          type: 'comment',
-          name: 'question19',
-          description:
-            'Neben den ganzen reisen ist mir auch aufgefallen dass sie relativ viel lesen. Da habe ich mich auch in ihren \nZimmern umgeschaut und die Bücher und Gernre gezählt. ',
-        },
+          type: 'html',
+          name: 'introBuch',
+          title: 'Bucherregal',
+          html:
+          `
+          <div style="background-color: white; padding-top: 32px; padding-left: 40px; padding-bottom: 40px; padding-right: 40px; box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.15); border-radius: 4px">
+<body>  Meine Freunde sind leidenschaftliche Leser und haben eine beeindruckende Sammlung von Büchern in verschiedenen Genres. Da habe ich mich auch in ihren \nZimmern umgeschaut und diese gezählt und kategorisiert. 
+</div>
+        </body>
+            `
+          },
+  
         {
           type: 'book',
         },
         {
-          type: 'checkbox',
-          name: 'question20',
+          "type": "image",
+          "name": "Freunde",
+          "imageLink": "https://api.surveyjs.io/private/Surveys/files?name=086021f0-d4a3-4ed2-b899-6d3f87ff845b",
+          "imageFit": "cover",
+          "imageHeight": "auto",
+          "imageWidth": "100%"
+         },
+        {
+          type: 'text',
+          name: 'book_most',
           title: 'Wer besitzt die meisten Bücher ?',
-          choices: [
-            {
-              value: 'Item 1',
-              text: 'Elli',
-            },
-            {
-              value: 'Item 2',
-              text: 'Nadine',
-            },
-            {
-              value: 'Item 3',
-              text: 'Max',
-            },
-            {
-              value: 'Item 4',
-              text: 'Paul',
-            },
-          ],
         },
         {
           type: 'text',
-          name: 'question21',
+          name: 'book_noSachbuch',
           title: 'Wer besitzt kein Sachbuch?',
         },
         {
           type: 'text',
-          name: 'question22',
+          name: 'book_mostGenre',
           title: 'Welches Genre ist am meisten vertreten?',
         },
         {
           type: 'text',
-          name: 'question23',
+          name: 'book_leastKrimi',
           title: 'Wer hat die wenigsten Krimis gelesen?',
         },
         {
           type: 'text',
-          name: 'question24',
+          name: 'book_mostSachbuch',
           title: 'Wer hat die meisten Sachbücher ?',
         },
       ],
-      title: 'Diagramm 2',
+      title: 'Büchersammlung',
     },
+    
     {
       name: 'page8',
       elements: [
         {
-          type: 'comment',
-          name: 'question25',
-          description:
-            'Neben Büchern und Reisen , hören wir auch Musik. Ich hab mit mal ihr Spotify Wrapped angeschaut und das hier\nerstellt : ',
-        },
+          type: 'html',
+          name: 'introBuch',
+          title: 'Bucherregal',
+          html:
+          `
+          <div style="background-color: white; padding-top: 32px; padding-left: 40px; padding-bottom: 40px; padding-right: 40px; box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.15); border-radius: 4px">
+<body> Für eine bevorstehende Party habe ich die Spotify Wrapped meiner Freunde analysiert, um die Genres und Liederanzahl für die perfekte musikalische Abstimmung zu erfassen. ,
+</div>
+        </body>
+            `
+          },
+      
         {
           type: 'music',
         },
+    
         {
-          type: 'checkbox',
-          name: 'question29',
+          "type": "image",
+          "name": "Freunde",
+          "imageLink": "https://api.surveyjs.io/private/Surveys/files?name=086021f0-d4a3-4ed2-b899-6d3f87ff845b",
+          "imageFit": "cover",
+          "imageHeight": "auto",
+          "imageWidth": "100%"
+         },
+        {
+          type: 'text',
+          name: 'music_most',
           title: 'Wer besitzt die meisten Lieblingssongs ?',
-          choices: [
-            {
-              value: 'Item 1',
-              text: 'Elli',
-            },
-            {
-              value: 'Item 2',
-              text: 'Nadine',
-            },
-            {
-              value: 'Item 3',
-              text: 'Max',
-            },
-            {
-              value: 'Item 4',
-              text: 'Paul',
-            },
-          ],
         },
         {
           type: 'text',
-          name: 'question30',
+          name: 'music_noTechno',
           title: 'Wer hört kein Techno?',
         },
         {
           type: 'text',
-          name: 'question31',
+          name: 'music_mostGenre',
           title: 'Welches Genre ist am meisten vertreten?',
         },
         {
           type: 'text',
-          name: 'question32',
+          name: 'music_mostRock',
           title: 'Wer hört am meisten Rock?',
         },
         {
           type: 'text',
-          name: 'question33',
+          name: 'music_lessPop',
           title: 'Wer hört am wenigsten Pop?',
         },
       ],
-      title: 'Diagramm 3',
+      title: 'Musikgeschmack',
     },
+    
   ],
 };
 
@@ -409,12 +473,14 @@ export class AppComponent implements OnInit {
   ngOnInit() {
     let testOrder: string = '123';
     let colorOrder: string = '1';
+    let timestamp: string;
 
     // Sollte true sein, falls es generell random sein soll
     if (this.isRandomized) {
       testOrder = TEST_CASES[this.getRandomInt(0, 3)];
       colorOrder = this.getRandomInt(1, 3).toString();
     }
+
 
     let newSurvey: any | undefined;
     this.route.queryParams.subscribe((params) => {
@@ -433,6 +499,7 @@ export class AppComponent implements OnInit {
         survey.onCurrentPageChanging.add(this.pageChange);
         this.surveyModel = survey;
       }
+
 
       //Neuer Params einfügen und neue HTML
       //
@@ -466,20 +533,28 @@ export class AppComponent implements OnInit {
         newOrder.push(...[lastThree[0], lastThree[2], lastThree[1]]);
         break;
       case '123':
-      default:
+        newOrder.push(...[lastThree[0], lastThree[1], lastThree[2]]);
+        break;
+      case '213':
+        newOrder.push(...[lastThree[1], lastThree[0], lastThree[2]]);
+        break;
+      case '321':
+        newOrder.push(...[lastThree[2], lastThree[1], lastThree[0]]);
+        break;
+    
         newOrder.push(...lastThree);
         break;
     }
+    
 
     surveyJson.pages = surveyJson.pages.slice(0, -3).concat(newOrder);
     return surveyJson;
   }
 
-  //Falls man ablehnt kommt man zum Ende
 
   pageChange(pageChange: SurveyModel, event: Survey.CurrentPageChangedEvent) {
     if (event.oldCurrentPage.id === 'sp_103') {
-      console.log(localStorage.getItem('colorpick'));
+     // console.log(localStorage.getItem('colorpick'));
     }
 
     if (
@@ -488,8 +563,10 @@ export class AppComponent implements OnInit {
     ) {
       pageChange.doComplete();
     }
+  
   }
 
+ 
   surveyComplete(surveyComplete: any, options?: any) {
     console.log(surveyComplete.data);
     this.service.sendData(surveyComplete.data); //Service ist schon   Service ist undefined

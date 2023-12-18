@@ -1,10 +1,13 @@
 
 // Refer to the following help topic for details:
+
+import { Color } from "fabric/fabric-impl";
+
 // https://surveyjs.io/Documentation/Survey-Creator?id=Create-Custom-Widget
 export function initColorPicker(Survey: any) {
     const widget = {
       name: "textwithbutton",
-      title: "Text with button",
+     title: "Text with button",
       iconName: "",
       widgetIsLoaded: function () {
         return true;
@@ -20,7 +23,13 @@ export function initColorPicker(Survey: any) {
       },
       isDefaultRender: false,
       htmlTemplate: `
-    <div class='matrix'>
+
+    
+
+<head>
+      <div style="background-color: white; padding-top: 32px; padding-left: 40px; padding-bottom: 40px; padding-right: 40px; ">
+        
+    <div class='matrix' >
         <div>
           <svg width="110" height="110">
             <rect class="color" x="5" y="5" rx="20" ry="20" width="100" height="100"
@@ -96,64 +105,93 @@ export function initColorPicker(Survey: any) {
 
         </div>
       </div>
+      </head>
 
-      <div class="q1">
-            Klick mal ne Farbe an oder so, kein Plan.
+      <body>
+      <div style="background-color: white; padding-top: 30px; padding-left: 40px; padding-bottom: 20px; padding-right: 40px;  box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.15); border-radius: 4px"">
+      <div class="q1" style="margin-top: 40px; " >
+            <h4>Wählen Sie eine Farbe aus die Sie gar nicht anspricht.  </h4>
       </div>
 
-      <div class="q2" style="display:none">
-           Klick noch ne Farbe an.
+      <div class="q2"  style="display:none" style="margin-top: 20px">
+     
+      <h4> Welche Farbe spiegelt am wenigsten <br>
+     Ihre Persönlichkeit wieder? </h4>
       </div>
 
-      <div class="q3" style="display:none">
-      10.
+      <div class="q3" style="display:none" style="margin-top: 20px; width:480px ">
+      <h4>Wenn Sie Ihr Zuhause dekorieren würden, <br>welche Farben würden Sie definitiv 
+nicht verwenden?</h4>
  </div>
 
- <div class="q4" style="display:none">
- 9.
+ <div class="q4" style="display:none" style="margin-top: 20px;">
+ <h4>Denken Sie an die Kleidung in Ihrem Schrank. <br>Welche Farben kommen dort
+ am seltensten vor?
 </div>
 
-<div class="q5" style="display:none">
-8.
+<div class="q5" style="display:none" style="margin-top: 20px;">
+<h4>Stellen Sie sich vor, Sie könnten nur Gegenstände<br> einer 
+ Farbe für den Rest Ihres Lebens verwenden.<br>
+  Welche der verbliebenen Farben würden Sie
+  <br>ausschließen?</h4>
 </div>
 
-<div class="q6" style="display:none">
-7.
+<div class="q6" style="display:none" style="margin-top: 20px;">
+<h4>Von den Übrig gebliebenen Farben,<br>
+ welche Farbe empfinden Sie als am wenigsten 
+ <br>beruhigend oder entspannend?</h4>
 </div>
 
-<div class="q7" style="display:none">
-6.
+<div class="q7" style="display:none" style="margin-top: 20px;">
+<h4>Wenn Sie ein Geschenk für sich selbst auswählen <br>
+müssten und alle Optionen in den verbleibenden<br>
+Farben verfügbar wären, welche Farbe würden <br>
+ Sie als letzte wählen?</h4>
 </div>
 
-<div class="q8" style="display:none">
-5.
+<div class="q8" style="display:none" style="margin-top: 20px;">
+<h4>Welche dieser Farben würden Sie in Kunstwerken <br> nicht bevorzugen?</h4>
 </div>
 
-<div class="q9" style="display:none">
-4.
+<div class="q9" style="display:none" style="margin-top: 20px;">
+<h4>Welche der Farbe verbinden sie am <br> wenigsten mit possitiven Emotionen?</h4>
 </div>
 
 <div class="q10" style="display:none">
-3.
+<h4>Bitte wählen Sie unter den verbleibenden Farben <br>
+ die jenige aus, die Sie am wenigsten interessiert <br> 
+ oder die Sie als langweilig empfinden.</h4>
 </div>
 <div class="q11" style="display:none">
-2.
+<h4>Unter den verbleibenden zwei Farben, gibt es eine,<br>
+ die Sie im Vergleich zu den anderen beiden 
+ <br>als weniger ansprechend empfinden?</h4>
 </div>
 <div class="q12" style="display:none">
-1.
+<h4>
+Bitte klicken Sie auf "next"</h4>
 </div>
+</div>
+</body>
 
 
-        </div>`,  //FRAGE
+        </div>
+        </body>`,  //FRAGE
 
       afterRender: function (question: any, el: any) {
-        const next = document.getElementById("sv-nav-next");
-      // console.log('shit', next);
+        const next = document.getElementById("sv-nav-next"); 
+        
+
+        
+      
         if (next) {
           next.hidden = true;
+         
         }
 
         const colors = Array.from(el.getElementsByClassName('color' ));
+
+
 
         const q1 = el.getElementsByClassName('q1')[0];
         const q2 = el.getElementsByClassName('q2')[0];
@@ -168,17 +206,28 @@ export function initColorPicker(Survey: any) {
         const q11 = el.getElementsByClassName('q11')[0];
         const q12 = el.getElementsByClassName('q12')[0];
 
+    
+        
+
         q2.style.display = 'none'
 
-        if(localStorage!= null)
+        if(localStorage!= null)                 //LocalStorage leeren falls was drin 
         {
           localStorage.removeItem('colorpick');
+          localStorage.removeItem('NoLieblingsFarbe2');
+          localStorage.removeItem('NoLieblingsFarbe1');
+          localStorage.removeItem('Lieblingsfarbe');
+
         }
 
         colors.forEach((color: any) => {
             color.onclick = function () {
                 const colorPick = localStorage.getItem('colorpick');
                 let current = JSON.parse(colorPick!);
+
+          
+          
+
 
                 if (current && current.length > 10) {
                   return;
@@ -193,6 +242,7 @@ export function initColorPicker(Survey: any) {
 
                     } else {
                         current = [color.style.fill];
+                      
                     }
                     localStorage.setItem('colorpick', JSON.stringify(current));
                     switch (current.length) {

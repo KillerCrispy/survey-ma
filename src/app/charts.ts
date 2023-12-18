@@ -1,4 +1,3 @@
-
 import { fabric } from 'fabric'
 import { install } from 'chart-js-fabric'
 import { COLOR_NAMES } from './constants';
@@ -39,44 +38,46 @@ export function initChartMusic({ Survey }: { Survey: any }) {
         let color: string | null;
 
         if (testOrder === '123') {
+
+      
           if (colorOrder === '1') {
-            color = localStorage.getItem(COLOR_NAMES[1]);
+            color = localStorage.getItem(COLOR_NAMES[2]);
           }
 
           if (colorOrder === '2') {
-            color = localStorage.getItem(COLOR_NAMES[0]);
+            color = localStorage.getItem(COLOR_NAMES[1]);
           }
 
           if (colorOrder === '3') {
-            color = localStorage.getItem(COLOR_NAMES[2]);
+            color = localStorage.getItem(COLOR_NAMES[0]);
           }
         }
 
         if (testOrder === '231') {
           if (colorOrder === '1') {
-            color = localStorage.getItem(COLOR_NAMES[0]);
+            color = localStorage.getItem(COLOR_NAMES[1]);
           }
 
           if (colorOrder === '2') {
-            color = localStorage.getItem(COLOR_NAMES[2]);
+            color = localStorage.getItem(COLOR_NAMES[0]);
           }
 
           if (colorOrder === '3') {
-            color = localStorage.getItem(COLOR_NAMES[1]);
+            color = localStorage.getItem(COLOR_NAMES[2]);
           }
         }
 
         if (testOrder === '312') {
           if (colorOrder === '1') {
-            color = localStorage.getItem(COLOR_NAMES[2]);
+            color = localStorage.getItem(COLOR_NAMES[0]);
           }
 
           if (colorOrder === '2') {
-            color = localStorage.getItem(COLOR_NAMES[1]);
+            color = localStorage.getItem(COLOR_NAMES[2]);
           }
 
           if (colorOrder === '3') {
-            color = localStorage.getItem(COLOR_NAMES[0]);
+            color = localStorage.getItem(COLOR_NAMES[1]);
           }
         }
 
@@ -86,13 +87,46 @@ export function initChartMusic({ Survey }: { Survey: any }) {
           }
 
           if (colorOrder === '2') {
-            color = localStorage.getItem(COLOR_NAMES[2]);
+            color = localStorage.getItem(COLOR_NAMES[0]);
           }
 
           if (colorOrder === '3') {
-            color = localStorage.getItem(COLOR_NAMES[0]);
+            color = localStorage.getItem(COLOR_NAMES[2]);
           }
         }
+
+
+      if (testOrder === '213') {
+        if (colorOrder === '1') {
+          color = localStorage.getItem(COLOR_NAMES[2]);
+        }
+
+        if (colorOrder === '2') {
+          color = localStorage.getItem(COLOR_NAMES[1]);
+        }
+
+        if (colorOrder === '3') {
+          color = localStorage.getItem(COLOR_NAMES[0]);
+        }
+
+        
+      }
+
+      if (testOrder === '321') {
+        if (colorOrder === '1') {
+          color = localStorage.getItem(COLOR_NAMES[0]);
+        }
+
+        if (colorOrder === '2') {
+          color = localStorage.getItem(COLOR_NAMES[2]);
+        }
+
+        if (colorOrder === '3') {
+          color = localStorage.getItem(COLOR_NAMES[1]);
+        }
+
+        
+      }
 
         var rgb = color!.match(/\d+/g);
         console.log('RGB Ausgabe:',rgb);
@@ -161,9 +195,9 @@ export function initChartMusic({ Survey }: { Survey: any }) {
 
                 break;
 
-                case 288: //Farbe 5 ROT
+                case 228: //Farbe 5 ROT
 
-                colors[0] = 'rgb(288,6,19)';
+                colors[0] = 'rgb(228,6,19)';
                 colors[1] = 'rgb(238,68,78)';
                 colors[2] = 'rgb(145,21,21)';
                 colors[3] = 'rgb(255,0,0)';
