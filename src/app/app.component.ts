@@ -146,13 +146,16 @@ const surveyJson = {
         "type": "boolean",
         "name": "BeeinträchtigungSehen",
         "title": "Haben Sie Beeinträchtigungen beim Sehen?",
-        "description": "Falls Sie eine Brille tragen dies Bitte auch als Sehbeeinträchtiung angeben."
+        "description": "Falls Sie eine Brille tragen dies Bitte auch als Sehbeeinträchtiung angeben.",
+        "labelTrue": "Ja ",
+        "labelFalse": "Nein"
        },
        {
         "type": "text",
         "name": "AntwortBeeinträchtigung",
         "visibleIf": "{BeeinträchtigungSehen} = true",
-        "title": "Bitte geben Sie die Art Ihrer Sehbeeinträchtigung an:"
+        "title": "Bitte geben Sie die Art Ihrer Sehbeeinträchtigung an:",
+        
        },
        {
         "type": "rating",
@@ -164,7 +167,9 @@ const surveyJson = {
        {
         "type": "boolean",
         "name": "Schlaf",
-        "title": "Fühlen Sie sich nach Ihrem letzten Schlaf erfrischt und ausgeruht?"
+        "title": "Fühlen Sie sich nach Ihrem letzten Schlaf erfrischt und ausgeruht?",
+        "labelTrue": "Ja ",
+        "labelFalse": "Nein"
        },
        {
         "type": "text",
@@ -437,7 +442,12 @@ const surveyJson = {
     },
     
   ],
+  "pagePrevText": "Zurück",
+ "pageNextText": "Weiter ",
+ "showTimerPanelMode": "survey",
+ "completeText": "Abschließen",
 };
+
 
 //console.log('Init Color Picker... ');
 initColorPicker(Survey);

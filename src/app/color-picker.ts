@@ -169,7 +169,8 @@ Farben verfügbar wären, welche Farbe würden <br>
 </div>
 <div class="q12" style="display:none">
 <h4>
-Bitte klicken Sie auf "next"</h4>
+Damit wurde die Fabpräferenz aktualisiert.<br>
+Bitte klicken Sie auf "Weiter"</h4>
 </div>
 </div>
 </body>
