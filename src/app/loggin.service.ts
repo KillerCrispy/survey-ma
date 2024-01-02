@@ -6,36 +6,46 @@ import { COLOR_NAMES } from './constants';
 
 @Injectable({ providedIn: 'root' })
 export class LoggingService {
-  /**
-   *
-   */
+  public startTime = 0;
+  public endTime = 0;
 
   constructor(public http: HttpClient) {}
 
   sendData(
     data: any //später Datenmodel verschicken
   ) {
+    this.endTime = new Date().getTime();  //End time 
+
+    const duration = this.endTime - this.startTime; 
+    console.log('start:', this.startTime);
+    console.log('ende:', this.endTime );
+    console.log('duration:', duration );
+
     const storage: any = {};
     COLOR_NAMES.forEach((element: string) => {
       storage[element] = localStorage.getItem(element);
     });
+
+    
     const test = {
-      surveyData: data,
-      localstorage: storage,
+      ...data,
+      ...storage,
       testOrder: localStorage.getItem('testOrder'),
       colorOrder: localStorage.getItem('colorOrder'),
+      duration :  this.millisToMinutesAndSeconds(duration),
     };
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
       'Accept': 'application/json',
       'Authorization': 'Bearer ae12bc42'
     });
-    // console.log('test:', test);
+    console.log('data:', data );
+    console.log('test:', test);
     const url = isDevMode()
       ? 'http://localhost:3000/log/chrissy-ma'
       : 'http://itv21.informatik.htw-dresden.de:3000/log/chrissy-ma';
     this.http
-      .post(url, data, { headers: headers })
+      .post(url, test , { headers: headers }) // +test
       .pipe(take(1))
       .subscribe({
         complete: () => { console.log('Logging Success'); },
@@ -49,4 +59,15 @@ export class LoggingService {
         }
       });
   }
+
+   millisToMinutesAndSeconds(millis: number) {
+    var minutes = Math.floor(millis / 60000);
+    var seconds = Number(((millis % 60000) / 1000).toFixed(0));
+    return minutes + ":" + (seconds < 10 ? '0' : '') + seconds;
+  }
+  
+  setStartTime(){
+    this.startTime = new Date().getTime();  // Start time 
+  }
+  
 }

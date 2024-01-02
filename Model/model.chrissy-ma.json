@@ -1,6 +1,10 @@
 {
     "testOrder": 123,
     "colorOrder": 123,
+    "Lieblingsfarbe": "rgb(89, 53, 140)",
+    "NoLieblingsFarbe1": "rgb(89, 53, 140)",
+    "NoLieblingsFarbe2": "rgb(242, 146, 0)", 
+    "duration":"0:38",
     "Datenschutzerklaerung" : true,       
     "LastName" : "Nachname",               
     "FirstName": "Vorname",                 

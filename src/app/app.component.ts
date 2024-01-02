@@ -12,6 +12,7 @@ import { initChartBook } from './buchChart';
 import { initChartLand } from './landChart';
 import { TEST_CASES } from './constants';
 import { timestamp } from 'rxjs';
+import { survey2 } from './Umfrage2';
 
 const surveyJson = {
   title: 'ERINNERBARKEIT VON INFORMATIONSVISUALISIERUNGEN',
@@ -48,6 +49,7 @@ const surveyJson = {
     </body>
         </div>`
       }
+      
     ]
   },
     {
@@ -233,7 +235,11 @@ const surveyJson = {
       name: 'page4',
       elements: [
         {
+          "name": '',
           type: 'textwithbutton',
+          "hideNumber": true,
+          "hideTitle": true,
+
         },
       ],
       title: 'FARBAUSWAHL',
@@ -288,7 +294,9 @@ const surveyJson = {
             `
           },
         {
+          "name": '',
           type: 'land',
+          "hideNumber": true,
         },
         {
           "type": "image",
@@ -345,7 +353,9 @@ const surveyJson = {
           },
   
         {
+          "name": '',
           type: 'book',
+          "hideNumber": true,
         },
         {
           "type": "image",
@@ -401,7 +411,10 @@ const surveyJson = {
           },
       
         {
+          "name": '',
           type: 'music',
+          "hideNumber": true,
+
         },
     
         {
@@ -484,6 +497,8 @@ export class AppComponent implements OnInit {
     let testOrder: string = '123';
     let colorOrder: string = '1';
     let timestamp: string;
+    this.service.setStartTime();
+
 
     // Sollte true sein, falls es generell random sein soll
     if (this.isRandomized) {
@@ -510,9 +525,15 @@ export class AppComponent implements OnInit {
         this.surveyModel = survey;
       }
 
-
-      //Neuer Params einfügen und neue HTML
-      //
+  
+      if(params['s'] && params['s']==='true')
+      {
+        newSurvey = survey2;
+        const survey = new Model(newSurvey);
+        survey.onComplete.add((sender, options) => this.surveyComplete(sender, options));
+        survey.onCurrentPageChanging.add(this.pageChange);
+        this.surveyModel = survey;
+      }
     });
 
     const matrix = [];
@@ -563,8 +584,15 @@ export class AppComponent implements OnInit {
 
 
   pageChange(pageChange: SurveyModel, event: Survey.CurrentPageChangedEvent) {
+    console.log('Time: ');
+    if(event.oldCurrentPage.id === 'sp_100' )
+    {
+      //this.service.startTime();
+      pageChange.data.duration=0;
+      console.log('START');
+    }
     if (event.oldCurrentPage.id === 'sp_103') {
-     // console.log(localStorage.getItem('colorpick'));
+    // console.log(localStorage.getItem('colorpick'));
     }
 
     if (

@@ -2,6 +2,7 @@ import { fabric } from 'fabric'
 import { install } from 'chart-js-fabric'
 import { COLOR_NAMES } from './constants';
 
+
 install(fabric)
 
 // Refer to the following help topic for details:
@@ -25,7 +26,7 @@ export function initChartMusic({ Survey }: { Survey: any }) {
         ]);
       },
         isDefaultRender: false,
-        htmlTemplate: `Test <canvas width="550" height="700" id="myCanvas"></canvas>`,
+        htmlTemplate: `<canvas width="550" height="700" id="myCanvas"></canvas>`,
 
       afterRender: function (question: any, el: any) {
         // NoLieblingsFarbe1
@@ -357,7 +358,8 @@ export function initChartMusic({ Survey }: { Survey: any }) {
                             borderColor:"rgba(0,80,132,1)",
                             borderWidth:1,
                             order:20,
-                            fill:true
+                            fill:true,
+                           
                         },{
                             label:"HipHop",
                             data:[123,89,22,46],

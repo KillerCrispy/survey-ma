@@ -9,6 +9,9 @@ export function initColorPicker(Survey: any) {
       name: "textwithbutton",
      title: "Text with button",
       iconName: "",
+      "hideTitle": true,
+      "hideNumber": true,
+
       widgetIsLoaded: function () {
         return true;
       },
@@ -181,9 +184,10 @@ Bitte klicken Sie auf "Weiter"</h4>
 
       afterRender: function (question: any, el: any) {
         const next = document.getElementById("sv-nav-next"); 
-        
 
         
+    
+       
       
         if (next) {
           next.hidden = true;

@@ -24,7 +24,7 @@ export function initChartLand({ Survey }: { Survey: any }) {
       ]);
     },
     isDefaultRender: false,
-    htmlTemplate: `Test <canvas width="550" height="700" id="land"></canvas>`,
+    htmlTemplate: `<canvas width="550" height="700" id="land"></canvas>`,
 
     afterRender: function (question: any, el: any) {
        // LieblingsFarbe  	  0
