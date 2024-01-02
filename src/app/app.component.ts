@@ -256,7 +256,7 @@ const surveyJson = {
     <div style="background-color: white; padding-top: 32px; padding-left: 40px; padding-bottom: 40px; padding-right: 40px; box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.15); border-radius: 4px">
 <body>
     Im Folgenden finden Sie <b>drei kurze Geschichten</b>, 
-    die Kontext für die anschließenden Daten bietet.
+    die Kontext für die anschließenden Daten bieten.
     Bitte lesen Sie die Geschichten <b>aufmerksam</b> durch und
     betrachten Sie die <b>beigefügten Balkendiagramme</b>. 
     Nehmen Sie sich einen Moment Zeit, um <b>beides zu reflektieren</b>.
@@ -404,7 +404,7 @@ const surveyJson = {
           html:
           `
           <div style="background-color: white; padding-top: 32px; padding-left: 40px; padding-bottom: 40px; padding-right: 40px; box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.15); border-radius: 4px">
-<body> Für eine bevorstehende Party habe ich die Spotify Wrapped meiner Freunde analysiert, um die Genres und Liederanzahl für die perfekte musikalische Abstimmung zu erfassen. ,
+<body> Für eine bevorstehende Party habe ich die Spotifyfavoriten meiner Freunde analysiert, um die Genres und Liederanzahl für die perfekte musikalische Abstimmung zu erfassen. Diese Zusammenfassungen geben einen Überblick über die Lieblingssongs und -genres meiner Freunde an. ,
 </div>
         </body>
             `

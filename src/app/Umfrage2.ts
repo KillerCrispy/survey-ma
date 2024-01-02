@@ -7,11 +7,17 @@ export const survey2=
       "name": "page1",
       "elements": [
        {
-        "type": "comment",
+        "type": "html",
         "name": "Erklärung",
         "title": "Erklärung",
-        "placeholder": "Willkommen zum zweiten Teil unserer Umfrage. Wir schätzen Ihre fortgesetzte Beteiligung und bedanken uns für Ihr Engagement. Dieser Abschnitt baut auf den Informationen auf, die Sie im ersten Teil bereitgestellt haben. Die Fragen, die nun folgen, zielen darauf ab, unsere Forschung weiter zu vertiefen und ein umfassenderes Verständnis der untersuchten Thematik zu erlangen. Es ist wichtig, dass Sie sich Zeit nehmen, jede Frage sorgfältig zu lesen und zu beantworten. Ihre Einsichten sind entscheidend für den Erfolg dieser Studie. Bitte beachten Sie, dass die Umfrage erst mit Ihrer Teilnahme an diesem zweiten Teil als abgeschlossen gilt. Vielen Dank für Ihre wertvolle Unterstützung."
-       }
+        html: `<div style="background-color: white; padding-top: 32px; padding-left: 40px; padding-bottom: 40px; padding-right: 40px; box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.15); border-radius: 4px">
+        <body>
+        <p><strong>Willkommen zum zweiten Teil unserer Umfrage.</strong> Wir schätzen Ihre fortgesetzte Beteiligung und bedanken uns für Ihr Engagement.</p>
+        <p>Dieser Abschnitt baut auf den Informationen auf, die Sie im ersten Teil bereitgestellt haben. Die Fragen, die nun folgen, zielen darauf ab, <strong>unsere Forschung weiter zu vertiefen und ein umfassenderes Verständnis der untersuchten Thematik zu erlangen</strong>. Es ist wichtig, dass Sie sich Zeit nehmen, <strong>jede Frage sorgfältig zu lesen und zu beantworten</strong>. Ihre Einsichten sind entscheidend für den Erfolg dieser Studie.</p>
+        <p>Bitte beachten Sie, dass die Umfrage erst mit <strong>Ihrer Teilnahme an diesem zweiten Teil als abgeschlossen</strong> gilt. Vielen Dank für Ihre <strong>wertvolle Unterstützung</strong>.</p>
+          
+          </body>
+       `}
       ]
      },
      {
@@ -19,20 +25,20 @@ export const survey2=
       "elements": [
        {
         "type": "text",
-        "name": "question6",
+        "name": "LastName2",
         "title": "Nachname:",
         "isRequired": true
        },
        {
         "type": "text",
-        "name": "vorname",
+        "name": "FirstName2",
         "title": "Vorname:",
         "isRequired": true
        },
       
        {
         "type": "text",
-        "name": "question4",
+        "name": "E-Mail_2",
         "title": "Email:",
         "isRequired": true,
         "inputType": "email"
@@ -40,7 +46,6 @@ export const survey2=
        {
         "type": "comment",
         "name": "answ_allg_stories",
-        "visibleIf": "{vorname} = true",
         "title": "Reproduzieren Sie bitte woran Sie sich erinnern können:",
         "isRequired": true
        },
@@ -131,7 +136,7 @@ export const survey2=
         "title": "Wer hat am wenigsten Pop gehört ?"
        }
       ],
-      "title": "Musikgeschmack"
+      "title": "MUSIKGESCHMACK"
      },
      {
       "name": "page4",
@@ -202,7 +207,7 @@ export const survey2=
         "title": "Wer war bereits mehr als drei mal in Nord Amerika?"
        }
       ],
-      "title": "Reiselust"
+      "title": "REISELUST"
      },
      {
       "name": "page5",
@@ -273,7 +278,7 @@ export const survey2=
         "title": "Wer hat die meisten Sachbücher?"
        }
       ],
-      "title": "Büchersammlung"
+      "title": "BÜCHERSAMMLUNG"
      },
      {
       "name": "page6",
@@ -286,5 +291,7 @@ export const survey2=
       ],
       "title": "DANKE FÜR DIE TEILNAHME"
      }
-    ]
+    ],
+    "pagePrevText": "Zurück",
+    "pageNextText": "Weiter ",
    }
