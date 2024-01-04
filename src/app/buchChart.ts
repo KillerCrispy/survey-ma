@@ -109,7 +109,7 @@ export function initChartBook({ Survey }: { Survey: any }) {
         color = localStorage.getItem(COLOR_NAMES[1]);
       }
 
-      
+
     }
 
     if (testOrder === '321') {
@@ -125,7 +125,7 @@ export function initChartBook({ Survey }: { Survey: any }) {
         color = localStorage.getItem(COLOR_NAMES[2]);
       }
 
-      
+
     }
 
       var rgb = color!.match(/\d+/g);
@@ -472,7 +472,14 @@ export function initChartBook({ Survey }: { Survey: any }) {
         //    objects:[]
         //}
       };
-      instance.add(new fabric.Chart(conf));
+      const chart = new fabric.Chart(conf);
+      chart.hasControls = false;
+      chart.hoverCursor = "arrow";
+      chart.lockMovementX = true;
+      chart.lockMovementY = true;
+      chart.lockRotation = true;
+
+      instance.add(chart);
 
       const onValueChangedCallback = function () {
         //text.value = question.value ? question.value : "";
