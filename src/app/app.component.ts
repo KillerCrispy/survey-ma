@@ -293,6 +293,16 @@ const surveyJson = {
         </body>
             `
           },
+
+          {
+            type: 'html',
+            name: 'erklärung diagramm',
+            html:
+            `
+           <p>In dieser Umfrage haben Sie die <strong>Möglichkeit</strong>, durch Klicken auf die <strong>einzelnen Themen</strong> in der Historie die entsprechenden <strong>Balken ein- und auszublenden</strong>. Diese Funktion ermöglicht es Ihnen, eine <strong>bessere Übersicht</strong> über die Ergebnisse zu erhalten und sie nach Ihren <strong>Interessen zu filtern</strong>.</p>
+
+            `
+          },
         {
           "name": '',
           type: 'land',
@@ -324,7 +334,7 @@ const surveyJson = {
         {
           type: 'text',
           name: 'reisen_never_Asia',
-          title: 'War jemand noch nie in Asien?',
+          title: 'Wer war noch nie in Asien?',
         },
         {
           type: 'text',
@@ -351,9 +361,19 @@ const surveyJson = {
         </body>
             `
           },
+
+          {
+            type: 'html',
+            name: 'erklärung diagramm',
+            html:
+            `
+           <p>In dieser Umfrage haben Sie die <strong>Möglichkeit</strong>, durch Klicken auf die <strong>einzelnen Themen</strong> in der Historie die entsprechenden <strong>Balken ein- und auszublenden</strong>. Diese Funktion ermöglicht es Ihnen, eine <strong>bessere Übersicht</strong> über die Ergebnisse zu erhalten und sie nach Ihren <strong>Interessen zu filtern</strong>.</p>
+
+            `
+          },
   
         {
-          "name": '',
+          "name":'',
           type: 'book',
           "hideNumber": true,
         },
@@ -383,7 +403,7 @@ const surveyJson = {
         {
           type: 'text',
           name: 'book_leastKrimi',
-          title: 'Wer hat die wenigsten Krimis gelesen?',
+          title: 'Wer hat die wenigsten Krimis?',
         },
         {
           type: 'text',
@@ -409,7 +429,17 @@ const surveyJson = {
         </body>
             `
           },
-      
+          {
+            type: 'html',
+            name: 'erklärung diagramm',
+            html:
+            `
+           <p>In dieser Umfrage haben Sie die <strong>Möglichkeit</strong>, durch Klicken auf die <strong>einzelnen Themen</strong> in der Historie die entsprechenden <strong>Balken ein- und auszublenden</strong>. Diese Funktion ermöglicht es Ihnen, eine <strong>bessere Übersicht</strong> über die Ergebnisse zu erhalten und sie nach Ihren <strong>Interessen zu filtern</strong>.</p>
+
+            `
+          },
+
+         
         {
           "name": '',
           type: 'music',
@@ -496,9 +526,10 @@ export class AppComponent implements OnInit {
   ngOnInit() {
     let testOrder: string = '123';
     let colorOrder: string = '1';
-    let timestamp: string;
     this.service.setStartTime();
+    this.service.makeDate();
 
+    
 
     // Sollte true sein, falls es generell random sein soll
     if (this.isRandomized) {

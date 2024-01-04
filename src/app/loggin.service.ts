@@ -8,6 +8,7 @@ import { COLOR_NAMES } from './constants';
 export class LoggingService {
   public startTime = 0;
   public endTime = 0;
+  public datumZeit = "";
 
   constructor(public http: HttpClient) {}
 
@@ -17,9 +18,10 @@ export class LoggingService {
     this.endTime = new Date().getTime();  //End time 
 
     const duration = this.endTime - this.startTime; 
-    console.log('start:', this.startTime);
-    console.log('ende:', this.endTime );
-    console.log('duration:', duration );
+    //console.log('start:', this.startTime);
+    //console.log('ende:', this.endTime );
+    //console.log('duration:', duration );
+    const timeStamp = this.datumZeit;
 
     const storage: any = {};
     COLOR_NAMES.forEach((element: string) => {
@@ -33,6 +35,9 @@ export class LoggingService {
       testOrder: localStorage.getItem('testOrder'),
       colorOrder: localStorage.getItem('colorOrder'),
       duration :  this.millisToMinutesAndSeconds(duration),
+      TimeStamp: this.datumZeit,
+
+      
     };
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
@@ -68,6 +73,20 @@ export class LoggingService {
   
   setStartTime(){
     this.startTime = new Date().getTime();  // Start time 
+  }
+
+  makeDate(){
+let jetzt = new Date();
+let tag = jetzt.getDate().toString().padStart(2, '0');
+let monat = (jetzt.getMonth() + 1).toString().padStart(2, '0'); // Monate werden von 0 bis 11 gezählt
+let jahr = jetzt.getFullYear();
+let stunden = jetzt.getHours().toString().padStart(2, '0');
+let minuten = jetzt.getMinutes().toString().padStart(2, '0');
+let sekunden = jetzt.getSeconds().toString().padStart(2, '0');
+
+this.datumZeit = `${tag}.${monat}.${jahr} ${stunden}:${minuten}:${sekunden}`;
+console.log('was steht hier drin, kommen wir hier an:',this.datumZeit);
+
   }
   
 }

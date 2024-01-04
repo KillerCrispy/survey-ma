@@ -286,7 +286,7 @@ export const survey2=
        {
         "type": "html",
         "name": "question3",
-        "html": "\"Ich möchte mich herzlich bei Ihnen für Ihre Teilnahme und die Zeit bedanken, die Sie dieser Umfrage gewidmet haben. Ihr Beitrag ist für den Erfolg meiner Studie von großer Bedeutung. Vielen Dank für Ihre wertvolle Unterstützung.\"\n\n\n\n\n\n"
+        "html": "\Ich möchte mich herzlich bei Ihnen für Ihre Teilnahme und die Zeit bedanken, die Sie dieser Umfrage gewidmet haben. Ihr Beitrag ist für den Erfolg meiner Studie von großer Bedeutung. Vielen Dank für Ihre wertvolle Unterstützung.\\n\n\n\n\n\n"
        }
       ],
       "title": "DANKE FÜR DIE TEILNAHME"

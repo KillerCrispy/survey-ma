@@ -16,6 +16,7 @@
     "RatingStress": 10,                  
     "Schlaf": true,                     
     "AntwortSchlaf": "Krank",
+    "timeStamp" : "text",
 
 
     "reise_most" : "Name",
