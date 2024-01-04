@@ -121,28 +121,33 @@ const surveyJson = {
        {
         "type": "text",
         "name": "LastName",
-        "title": "Nachname"
+        "title": "Nachname",
+        isRequired: true,
        },
        {
         "type": "text",
         "name": "FirstName",
-        "title": "Vorname"
+        "title": "Vorname",
+        isRequired: true,
        },
        {
         "type": "text",
         "name": "Alter",
         "title": "Alter",
-        "inputType": "number"
+        "inputType": "number",
+        isRequired: true,
        },
        {
         "type": "text",
         "name": "E-Mail",
         "title": "E-Mail",
+        isRequired: true,
        },
        {
         "type": "text",
         "name": "Arbeit",
-        "title": "Studiengang / Ausbildung / Berufsbezeichnung"
+        "title": "Studiengang / Ausbildung / Berufsbezeichnung",
+        isRequired: true,
        },
        {
         "type": "boolean",
@@ -150,13 +155,15 @@ const surveyJson = {
         "title": "Haben Sie Beeinträchtigungen beim Sehen?",
         "description": "Falls Sie eine Brille tragen, dies Bitte auch als Sehbeeinträchtiung angeben.",
         "labelTrue": "Ja ",
-        "labelFalse": "Nein"
+        "labelFalse": "Nein",
+        isRequired: true,
        },
        {
         "type": "text",
         "name": "AntwortBeeinträchtigung",
         "visibleIf": "{BeeinträchtigungSehen} = true",
         "title": "Bitte geben Sie die Art Ihrer Sehbeeinträchtigung an:",
+         isRequired: true,
         
        },
        {
@@ -164,14 +171,17 @@ const surveyJson = {
         "name": "RatingStress",
         "title": "Wie würden Sie Ihren aktuellen Stresslevel auf einer Skala von 1 bis 10 bewerten, wobei 1 \"überhaupt kein Stress\" und 10 \"extrem gestresst\" bedeutet?",
         "rateCount": 10,
-        "rateMax": 10
+        "rateMax": 10,
+        isRequired: true,
        },
        {
         "type": "boolean",
         "name": "Schlaf",
         "title": "Fühlen Sie sich nach Ihrem letzten Schlaf erfrischt und ausgeruht?",
         "labelTrue": "Ja ",
-        "labelFalse": "Nein"
+        "labelFalse": "Nein",
+        isRequired: true,
+
        },
        {
         "type": "text",
@@ -320,26 +330,32 @@ const surveyJson = {
           type: 'text',
           name: 'reisen_most',
           title: 'Wer ist am meisten verreist?',
+          isRequired: true,
+          
         },
         {
           type: 'text',
           name: 'reise_never_afrika',
           title: 'Wer war noch nie in Afrika ?',
+          isRequired: true,
         },
         {
           type: 'text',
           name: 'reisen_most_continent',
           title: 'Welcher Kontinent wurde am meisten besucht ?',
+          isRequired: true,
         },
         {
           type: 'text',
           name: 'reisen_never_Asia',
           title: 'Wer war noch nie in Asien?',
+          isRequired: true,
         },
         {
           type: 'text',
           name: 'reisen_moreThan_america',
           title: 'Wer war schon mehr als drei Mal in Nordamerika ?',
+          isRequired: true,
         },
 
       
@@ -389,26 +405,31 @@ const surveyJson = {
           type: 'text',
           name: 'book_most',
           title: 'Wer besitzt die meisten Bücher ?',
+          isRequired: true,
         },
         {
           type: 'text',
           name: 'book_noSachbuch',
           title: 'Wer besitzt kein Sachbuch?',
+          isRequired: true,
         },
         {
           type: 'text',
           name: 'book_mostGenre',
           title: 'Welches Genre ist am meisten vertreten?',
+          isRequired: true,
         },
         {
           type: 'text',
           name: 'book_leastKrimi',
           title: 'Wer hat die wenigsten Krimis?',
+          isRequired: true,
         },
         {
           type: 'text',
           name: 'book_mostSachbuch',
           title: 'Wer hat die meisten Sachbücher ?',
+          isRequired: true,
         },
       ],
       title: 'Büchersammlung',
@@ -459,26 +480,31 @@ const surveyJson = {
           type: 'text',
           name: 'music_most',
           title: 'Wer besitzt die meisten Lieblingssongs ?',
+          isRequired: true,
         },
         {
           type: 'text',
           name: 'music_noTechno',
           title: 'Wer hört kein Techno?',
+          isRequired: true,
         },
         {
           type: 'text',
           name: 'music_mostGenre',
           title: 'Welches Genre ist am meisten vertreten?',
+          isRequired: true,
         },
         {
           type: 'text',
           name: 'music_mostRock',
           title: 'Wer hört am meisten Rock?',
+          isRequired: true,
         },
         {
           type: 'text',
           name: 'music_lessPop',
           title: 'Wer hört am wenigsten Pop?',
+          isRequired: true,
         },
       ],
       title: 'Musikgeschmack',
@@ -615,12 +641,12 @@ export class AppComponent implements OnInit {
 
 
   pageChange(pageChange: SurveyModel, event: Survey.CurrentPageChangedEvent) {
-    console.log('Time: ');
+    //console.log('Time: ');
     if(event.oldCurrentPage.id === 'sp_100' )
     {
       //this.service.startTime();
       pageChange.data.duration=0;
-      console.log('START');
+      //console.log('START');
     }
     if (event.oldCurrentPage.id === 'sp_103') {
     // console.log(localStorage.getItem('colorpick'));

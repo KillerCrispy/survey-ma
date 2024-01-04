@@ -52,18 +52,21 @@ export const survey2=
        {
         "type": "boolean",
         "name": "bool_allg_names",
-        "title": "Können Sie sich noch an die Namen der Personen erinnern?"
+        "title": "Können Sie sich noch an die Namen der Personen erinnern?",
+        isRequired: true,
        },
        {
         "type": "text",
         "name": "answ_allg_names",
         "visibleIf": "{bool_allg_names} = true",
-        "title": "Bitte reproduzieren Sie die Namen der Personen an die Sie sich erinnern können."
+        "title": "Bitte reproduzieren Sie die Namen der Personen an die Sie sich erinnern können.",
+        isRequired: true,
        },
        {
         "type": "comment",
         "name": "allg_2",
-        "title": "Welche andern Informationen sind Ihnen noch im Gedächtnis geblieben?"
+        "title": "Welche andern Informationen sind Ihnen noch im Gedächtnis geblieben?",
+        isRequired: true,
        }
       ]
      },
@@ -83,57 +86,67 @@ export const survey2=
        {
         "type": "boolean",
         "name": "bool_music_mostSong",
-        "title": "Können Sie sich noch daran erinnern wer die meisten Lieblingssongs besessen hat ?"
+        "title": "Können Sie sich noch daran erinnern wer die meisten Lieblingssongs besessen hat ?",
+        isRequired: true,
        },
        {
         "type": "text",
         "name": "answ_music_mostSong",
         "visibleIf": "{bool_music_mostSong} = true",
-        "title": "Wer hatte die meisten Lieblingssongs?"
+        "title": "Wer hatte die meisten Lieblingssongs?",
+        isRequired: true,
        },
        {
         "type": "boolean",
         "name": "bool_music_noTechno",
-        "title": "Können Sie sich noch daran erinnern wer kein Techno gehört hat ?"
+        "title": "Können Sie sich noch daran erinnern wer kein Techno gehört hat ?",
+        isRequired: true,
        },
        {
         "type": "text",
         "name": "answ_music_noTechno",
         "visibleIf": "{bool_music_noTechno} = true",
-        "title": "Wer hat kein Techno gehört?"
+        "title": "Wer hat kein Techno gehört?",
+        isRequired: true,
        },
        {
         "type": "boolean",
         "name": "bool_music_mostGenre",
-        "title": "Können Sie sich noch daran erinnern welches Gerne am meisten vertreten war?"
+        "title": "Können Sie sich noch daran erinnern welches Gerne am meisten vertreten war?",
+        isRequired: true,
        },
        {
         "type": "text",
         "name": "answ_music_mostGenre",
         "visibleIf": "{bool_music_mostGenre} = true",
-        "title": "Welches Gerne war am meisten vertreten ?"
+        "title": "Welches Gerne war am meisten vertreten ?",
+        isRequired: true,
        },
        {
         "type": "boolean",
         "name": "bool_music_mostRock",
-        "title": "Können Sie sich daran erinnern wer am meisten Rock gehört hat ?"
+        "title": "Können Sie sich daran erinnern wer am meisten Rock gehört hat ?",
+        isRequired: true,
        },
        {
         "type": "text",
         "name": "ans_music_mostRock",
         "visibleIf": "{bool_music_mostRock} = true",
-        "title": "Wer hat am meisten Rock gehört ?"
+        "title": "Wer hat am meisten Rock gehört ?",
+        isRequired: true,
        },
        {
         "type": "boolean",
         "name": "bool_music_leastPop",
-        "title": "Können Sie sich noch daran erinnern wer am wenigsten Pop gehört hat ?"
+        "title": "Können Sie sich noch daran erinnern wer am wenigsten Pop gehört hat ?",
+        isRequired: true,
        },
        {
         "type": "text",
         "name": "answ_music_leastPop",
         "visibleIf": "{bool_music_leastPop} = true",
-        "title": "Wer hat am wenigsten Pop gehört ?"
+        "title": "Wer hat am wenigsten Pop gehört ?",
+        isRequired: true,
        }
       ],
       "title": "MUSIKGESCHMACK"
@@ -154,57 +167,67 @@ export const survey2=
        {
         "type": "boolean",
         "name": "bool_reisen_most",
-        "title": "Können Sie sich noch daran erinnern wer am meisten verreist ist?"
+        "title": "Können Sie sich noch daran erinnern wer am meisten verreist ist?",
+        isRequired: true,
        },
        {
         "type": "text",
         "name": "answ_reisen_most",
         "visibleIf": "{bool_reisen_most} = true",
-        "title": "Wer ist am meisten verreist?"
+        "title": "Wer ist am meisten verreist?",
+        isRequired: true,
        },
        {
         "type": "boolean",
         "name": "bool_reisen_neverAfrica",
-        "title": "Können Sie sich noch daran erinnern wer noch nie in Afrika war?"
+        "title": "Können Sie sich noch daran erinnern wer noch nie in Afrika war?",
+        isRequired: true,
        },
        {
         "type": "text",
         "name": "answ_reisen_neverAfrica",
         "visibleIf": "{bool_reisen_neverAfrica} = true",
-        "title": "Wer war noch nie in Afrika?"
+        "title": "Wer war noch nie in Afrika?",
+        isRequired: true,
        },
        {
         "type": "boolean",
         "name": "bool_reisen_mostContinent",
-        "title": "Können Sie sich noch daran erinnern welcher Kontinent am meisten besucht wurde?"
+        "title": "Können Sie sich noch daran erinnern welcher Kontinent am meisten besucht wurde?",
+        isRequired: true,
        },
        {
         "type": "text",
         "name": "answ_reisen_mostContinent",
         "visibleIf": "{bool_reisen_mostContinent} = true",
-        "title": "Welcher Kontinent wurde am meisten besucht?"
+        "title": "Welcher Kontinent wurde am meisten besucht?",
+        isRequired: true,
        },
        {
         "type": "boolean",
         "name": "bool_reisen_neverAsia",
-        "title": "Können Sie sich daran erinnern wer noch nie in Asien war?"
+        "title": "Können Sie sich daran erinnern wer noch nie in Asien war?",
+        isRequired: true,
        },
        {
         "type": "text",
         "name": "answ_reisen_neverAsia",
         "visibleIf": "{bool_reisen_neverAsia} = true",
-        "title": "Wer war noch nie in Asien?"
+        "title": "Wer war noch nie in Asien?",
+        isRequired: true,
        },
        {
         "type": "boolean",
         "name": "bool_reisen_more3NA",
-        "title": "Können Sie sich noch daran erinnern wer mehr als drei mal in Nord Amerika war?"
+        "title": "Können Sie sich noch daran erinnern wer mehr als drei mal in Nordamerika war?",
+        isRequired: true,
        },
        {
         "type": "text",
         "name": "answ_reisen_more3NA",
         "visibleIf": "{bool_reisen_more3NA} = true",
-        "title": "Wer war bereits mehr als drei mal in Nord Amerika?"
+        "title": "Wer war bereits mehr als drei mal in Nordamerika?",
+        isRequired: true,
        }
       ],
       "title": "REISELUST"
@@ -225,57 +248,67 @@ export const survey2=
        {
         "type": "boolean",
         "name": "bool_book_most",
-        "title": "Können Sie sich noch daran erinnern wer die meisten Bücher besessen hat ?"
+        "title": "Können Sie sich noch daran erinnern wer die meisten Bücher besessen hat ?",
+        isRequired: true,
        },
        {
         "type": "text",
         "name": "answ_book_most",
         "visibleIf": "{bool_book_most} = true",
-        "title": "Wer hat die meisten Bücher besessen?"
+        "title": "Wer hat die meisten Bücher besessen?",
+        isRequired: true,
        },
        {
         "type": "boolean",
         "name": "bool_book_noSachbuch",
-        "title": "Können Sie sich noch daran erinnern wer keine Sachbücher besessen hat ?"
+        "title": "Können Sie sich noch daran erinnern wer keine Sachbücher besessen hat ?",
+        isRequired: true,
        },
        {
         "type": "text",
         "name": "answ_book_noSachbuch",
         "visibleIf": "{bool_book_noSachbuch} = true",
-        "title": "Wer hat keine Sachbücher besessen?"
+        "title": "Wer hat keine Sachbücher besessen?",
+        isRequired: true,
        },
        {
         "type": "boolean",
         "name": "bool_book_mostGenre",
-        "title": "Können Sie sich noch daran erinnern welches Gerne am meisten vertreten war ?"
+        "title": "Können Sie sich noch daran erinnern welches Gerne am meisten vertreten war ?",
+        isRequired: true,
        },
        {
         "type": "text",
         "name": "answ_book_mostGenre",
         "visibleIf": "{bool_book_mostGenre} = true",
-        "title": "Welches Genre war am meisten vertreten?"
+        "title": "Welches Genre war am meisten vertreten?",
+        isRequired: true,
        },
        {
         "type": "boolean",
         "name": "bool_book_leastKrimi",
-        "title": "Können Sie sich daran erinnern wer die wenigsten Krimis gelesen hat ?"
+        "title": "Können Sie sich daran erinnern wer die wenigsten Krimis gelesen hat ?",
+        isRequired: true,
        },
        {
         "type": "text",
         "name": "answ_book_leastKrimi",
         "visibleIf": "{bool_book_leastKrimi} = true",
-        "title": "Wer hat die wenigsten Krimis gelesen?"
+        "title": "Wer hat die wenigsten Krimis gelesen?",
+        isRequired: true,
        },
        {
         "type": "boolean",
         "name": "bool_book_mostSachbuch",
-        "title": "Können Sie sich noch daran erinnern wer die meisten Sachbücher besessen hat ?"
+        "title": "Können Sie sich noch daran erinnern wer die meisten Sachbücher besessen hat ?",
+        isRequired: true,
        },
        {
         "type": "text",
         "name": "answ_book_mostSachbuch",
         "visibleIf": "{bool_book_mostSachbuch} = true",
-        "title": "Wer hat die meisten Sachbücher?"
+        "title": "Wer hat die meisten Sachbücher?",
+        isRequired: true,
        }
       ],
       "title": "BÜCHERSAMMLUNG"
@@ -286,7 +319,7 @@ export const survey2=
        {
         "type": "html",
         "name": "question3",
-        "html": "\Ich möchte mich herzlich bei Ihnen für Ihre Teilnahme und die Zeit bedanken, die Sie dieser Umfrage gewidmet haben. Ihr Beitrag ist für den Erfolg meiner Studie von großer Bedeutung. Vielen Dank für Ihre wertvolle Unterstützung.\\n\n\n\n\n\n"
+        "html": "Ich möchte mich herzlich bei Ihnen für Ihre Teilnahme und die Zeit bedanken, die Sie dieser Umfrage gewidmet haben. Ihr Beitrag ist für den Erfolg meiner Studie von großer Bedeutung. Vielen Dank für Ihre wertvolle Unterstützung."
        }
       ],
       "title": "DANKE FÜR DIE TEILNAHME"

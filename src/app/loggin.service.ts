@@ -85,7 +85,7 @@ let minuten = jetzt.getMinutes().toString().padStart(2, '0');
 let sekunden = jetzt.getSeconds().toString().padStart(2, '0');
 
 this.datumZeit = `${tag}.${monat}.${jahr} ${stunden}:${minuten}:${sekunden}`;
-console.log('was steht hier drin, kommen wir hier an:',this.datumZeit);
+
 
   }
   
