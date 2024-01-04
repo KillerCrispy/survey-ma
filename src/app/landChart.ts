@@ -1,8 +1,12 @@
 import { fabric } from 'fabric';
 import { install } from 'chart-js-fabric';
 import { COLOR_NAMES } from './constants';
+// import zoomPlugin from 'chartjs-plugin-zoom';
 
 install(fabric);
+fabric.Object.prototype.hasRotatingPoint = false;
+
+// fabric.util.chart.addPlugins(zoomPlugin);
 
 // Refer to the following help topic for details:
 // https://surveyjs.io/Documentation/Survey-Creator?id=Create-Custom-Widget
@@ -30,18 +34,18 @@ export function initChartLand({ Survey }: { Survey: any }) {
        // LieblingsFarbe  	  0
        // NoLieblingsFarbe1   1
        // NoLieblingsFarbe2   2
-     
+
 
       const testOrder = localStorage.getItem('testOrder');
       const colorOrder = localStorage.getItem('colorOrder');
 
       let color: string | null;
 
-    
 
-      if (testOrder === '123') {   // Land Buch Musik 
+
+      if (testOrder === '123') {   // Land Buch Musik
         if (colorOrder === '1') {
-          color = localStorage.getItem(COLOR_NAMES[0]); 
+          color = localStorage.getItem(COLOR_NAMES[0]);
         }
 
         if (colorOrder === '2') {
@@ -94,7 +98,7 @@ export function initChartLand({ Survey }: { Survey: any }) {
           color = localStorage.getItem(COLOR_NAMES[1]);
         }
 
-        
+
       }
 
       if (testOrder === '213') {
@@ -110,7 +114,7 @@ export function initChartLand({ Survey }: { Survey: any }) {
           color = localStorage.getItem(COLOR_NAMES[2]);
         }
 
-        
+
       }
 
       if (testOrder === '321') {
@@ -126,23 +130,23 @@ export function initChartLand({ Survey }: { Survey: any }) {
           color = localStorage.getItem(COLOR_NAMES[0]);
         }
 
-        
+
       }
 
       var rgb = color!.match(/\d+/g);
 
-    
-  
+
+
 
       let colors: string[] = new Array<string>(6);
       if (rgb) {
-        
+
 
         let one = Number.parseInt(rgb[0]);
         let two = Number.parseInt(rgb[1]);
         let three = Number.parseInt(rgb[2]);
 
-    
+
 
 
         //Farbschema wählen
@@ -283,7 +287,7 @@ export function initChartLand({ Survey }: { Survey: any }) {
             break;
             default:
            // console.log('default die nummer in r gibts nicht');
-           
+
             break;
         }
 
@@ -343,7 +347,7 @@ export function initChartLand({ Survey }: { Survey: any }) {
                 borderWidth: 1,
                 order: 10,
                 fill: true,
-                
+
               },
               {
                 label: 'Länder in Europa',
@@ -476,7 +480,14 @@ export function initChartLand({ Survey }: { Survey: any }) {
         //    objects:[]
         //}
       };
-      instance.add(new fabric.Chart(conf));
+      const chart = new fabric.Chart(conf);
+      chart.hasControls = false;
+      chart.hoverCursor = "arrow";
+      chart.lockMovementX = true;
+      chart.lockMovementY = true;
+      chart.lockRotation = true;
+
+      instance.add(chart);
 
       const onValueChangedCallback = function () {
         //text.value = question.value ? question.value : "";

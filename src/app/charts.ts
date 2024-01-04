@@ -40,7 +40,7 @@ export function initChartMusic({ Survey }: { Survey: any }) {
 
         if (testOrder === '123') {
 
-      
+
           if (colorOrder === '1') {
             color = localStorage.getItem(COLOR_NAMES[2]);
           }
@@ -110,7 +110,7 @@ export function initChartMusic({ Survey }: { Survey: any }) {
           color = localStorage.getItem(COLOR_NAMES[0]);
         }
 
-        
+
       }
 
       if (testOrder === '321') {
@@ -126,7 +126,7 @@ export function initChartMusic({ Survey }: { Survey: any }) {
           color = localStorage.getItem(COLOR_NAMES[1]);
         }
 
-        
+
       }
 
         var rgb = color!.match(/\d+/g);
@@ -359,7 +359,7 @@ export function initChartMusic({ Survey }: { Survey: any }) {
                             borderWidth:1,
                             order:20,
                             fill:true,
-                           
+
                         },{
                             label:"HipHop",
                             data:[120,90,55,50],
@@ -474,7 +474,14 @@ export function initChartMusic({ Survey }: { Survey: any }) {
                 //    objects:[]
                 //}
             }
-        instance.add(new fabric.Chart(conf));
+        const chart = new fabric.Chart(conf);
+        chart.hasControls = false;
+        chart.hoverCursor = "arrow";
+        chart.lockMovementX = true;
+        chart.lockMovementY = true;
+        chart.lockRotation = true;
+
+        instance.add(chart);
 
         const onValueChangedCallback = function () {
           //text.value = question.value ? question.value : "";
