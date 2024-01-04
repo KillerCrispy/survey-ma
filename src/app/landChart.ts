@@ -364,7 +364,7 @@ export function initChartLand({ Survey }: { Survey: any }) {
                 fill: true,
               },
               {
-                label: 'Länder in Nord Amerika',
+                label: 'Länder in Nordamerika',
                 data: [4,0,2,2],
                 backgroundColor: colors[3] ?? 'rgba(37, 90, 125, 1)',
                 borderColor: 'rgb(10,10,10)',
@@ -373,7 +373,7 @@ export function initChartLand({ Survey }: { Survey: any }) {
                 fill: true,
               },
               {
-                label: 'Länder in Süd Amerika',
+                label: 'Länder in Südamerika',
                 data: [2,2,4,0],
                 backgroundColor: colors[4] ?? 'rgba(192, 228, 252, 1)',
                 borderColor: 'rgb(10,10,10)',

@@ -113,13 +113,13 @@ export function initColorPicker(Survey: any) {
       <body>
       <div style="background-color: white; padding-top: 30px; padding-left: 40px; padding-bottom: 20px; padding-right: 40px;  box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.15); border-radius: 4px"">
       <div class="q1" style="margin-top: 40px; " >
-            <h4>Wählen Sie eine Farbe aus die Sie gar nicht anspricht.  </h4>
+            <h4>Wählen Sie eine Farbe aus, die Sie gar nicht anspricht.  </h4>
       </div>
 
       <div class="q2"  style="display:none" style="margin-top: 20px">
      
-      <h4> Welche Farbe spiegelt am wenigsten <br>
-     Ihre Persönlichkeit wider? </h4>
+      <h4> Welche Farbe spiegelt Ihre Persönlichkeit <br>
+     am wenigsten wider? </h4>
       </div>
 
       <div class="q3" style="display:none" style="margin-top: 20px; width:480px ">
@@ -140,7 +140,7 @@ nicht verwenden?</h4>
 </div>
 
 <div class="q6" style="display:none" style="margin-top: 20px;">
-<h4>Von den Übrig gebliebenen Farben,<br>
+<h4>Von den übrig gebliebenen Farben,<br>
  welche Farbe empfinden Sie als am wenigsten 
  <br>beruhigend oder entspannend?</h4>
 </div>
@@ -157,7 +157,7 @@ Farben verfügbar wären, welche Farbe würden <br>
 </div>
 
 <div class="q9" style="display:none" style="margin-top: 20px;">
-<h4>Welche der Farbe verbinden sie am <br> wenigsten mit possitiven Emotionen?</h4>
+<h4>Welche der Farben verbinden sie am <br> wenigsten mit positiven Emotionen?</h4>
 </div>
 
 <div class="q10" style="display:none">

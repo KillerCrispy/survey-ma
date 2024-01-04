@@ -66,11 +66,11 @@ const surveyJson = {
         <div style="background-color: white; padding-top: 32px; padding-left: 40px; padding-bottom: 40px; padding-right: 40px; box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.15); border-radius: 4px">
         <p style="font-weight: bold;">
         Sehr geehrte Teilnehmende der Untersuchung,</p>
-        <p>hiermit erhalten Sie Informationen über Ihre Rechte und Pflichten als Versuchsperson sowie unsere Verpflichtungen als Versuchsleitung:</p>
+        <p>hiermit erhalten Sie Informationen über Ihre Rechte und Pflichten als Versuchsperson sowie meiner Verpflichtungen als Versuchsleitung:</p>
         <br />
         <p style="font-weight: bold;">1. Freiwilligkeit der Teilnahme</p>
         <p>Sie haben sich freiwillig entschieden, an dieser Untersuchung teilzunehmen. 
-        Wir danken Ihnen für Ihre Bereitschaft, mit Ihrer Mitarbeit zum Gelingen unserer Untersuchung beizutragen.</p>
+        Wir danken Ihnen für Ihre Bereitschaft, mit Ihrer Mitarbeit zum Gelingen meiner Untersuchung beizutragen.</p>
         <br />
         <p style="font-weight: bold;">2. Schutz vor Schädigung und Belastung</p>
         <p>Wir versichern, dass wir uns bemühen, Ihnen in diesem Experiment keine seelischen oder körperlichen Belastungen zuzumuten. 
@@ -89,7 +89,7 @@ const surveyJson = {
         Ihnen als Teilnehmende der Untersuchung obliegen einige nachvollziehbare Pflichten. Die Planung und Durchführung einer Untersuchung erfordert viel Zeit und Mühe. Daher ist es wichtig, dass Sie die Aufgabenstellungen der Untersuchung bestmöglich erfüllen, offen und ehrlich auf Fragen antworten und den Versuch ernst nehmen. Eine uninteressierte und oberflächliche Mitarbeit kann die Erreichung der Untersuchungsziele erheblich gefährden.</p>
            <br />
         <p style="font-weight: bold;">6. Gewährleistung der Anonymität</p>
-        <p>hre Antworten werden vertraulich behandelt und anonymisiert. Sie dienen ausschließlich der Auswertung im Rahmen dieser Masterarbeit. Wir danken Ihnen herzlich für Ihre Teilnahme! </div>
+        <p>Ihre Antworten werden vertraulich behandelt und anonymisiert. Sie dienen ausschließlich der Auswertung im Rahmen dieser Masterarbeit. Wir danken Ihnen herzlich für Ihre Teilnahme! </div>
     
 
         `
@@ -148,7 +148,7 @@ const surveyJson = {
         "type": "boolean",
         "name": "BeeinträchtigungSehen",
         "title": "Haben Sie Beeinträchtigungen beim Sehen?",
-        "description": "Falls Sie eine Brille tragen dies Bitte auch als Sehbeeinträchtiung angeben.",
+        "description": "Falls Sie eine Brille tragen, dies Bitte auch als Sehbeeinträchtiung angeben.",
         "labelTrue": "Ja ",
         "labelFalse": "Nein"
        },
@@ -255,7 +255,7 @@ const surveyJson = {
             
     <div style="background-color: white; padding-top: 32px; padding-left: 40px; padding-bottom: 40px; padding-right: 40px; box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.15); border-radius: 4px">
 <body>
-    Im Folgenden finden Sie <b>drei kurze Geschichten</b>, 
+    Im Folgenden finden Sie <b>drei kurze Geschichten,</b>, 
     die Kontext für die anschließenden Daten bieten.
     Bitte lesen Sie die Geschichten <b>aufmerksam</b> durch und
     betrachten Sie die <b>beigefügten Balkendiagramme</b>. 
@@ -288,7 +288,7 @@ const surveyJson = {
           `
           <div style="background-color: white; padding-top: 32px; padding-left: 40px; padding-bottom: 40px; padding-right: 40px; box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.15); border-radius: 4px">
 <body>
-            Ich habe meine Freunde letztens gefragt wie oft Sie eigentlich schon verreist sind und wohin. \nDabei haben wir dieses Diagramm erstellt. \n\nBitte schauen Sie es sich eine Weile an und beantworten Sie dann Fragen dazu.
+            Ich habe meine Freunde letztens gefragt, wie oft Sie eigentlich schon verreist sind und wohin. \nDabei haben wir dieses Diagramm erstellt. \n\nBitte schauen Sie es sich eine Weile an und beantworten Sie dann Fragen dazu.
         </div>
         </body>
             `
@@ -339,7 +339,7 @@ const surveyJson = {
         {
           type: 'text',
           name: 'reisen_moreThan_america',
-          title: 'Wer war schon mehr als drei mal in Nord Amerika ?',
+          title: 'Wer war schon mehr als drei Mal in Nordamerika ?',
         },
 
       
