@@ -335,7 +335,7 @@ const surveyJson = {
         },
         {
           type: 'text',
-          name: 'reise_never_afrika',
+          name: 'reisen_never_afrika',
           title: 'Wer war noch nie in Afrika ?',
           isRequired: true,
         },
