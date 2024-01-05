@@ -422,6 +422,7 @@ export function initChartBook({ Survey }: { Survey: any }) {
             plugins: {
               datalabels: {
                 display: true,
+                hasRotatingPoint: false,
                 borderColor: '#000',
                 borderWidth: 0,
                 borderRadius: 3,
