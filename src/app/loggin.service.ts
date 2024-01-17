@@ -8,16 +8,16 @@ import { COLOR_NAMES } from './constants';
 export class LoggingService {
   public startTime = 0;
   public endTime = 0;
-  public datumZeit = "";
+  public datumZeit = 0;
 
   constructor(public http: HttpClient) {}
 
   sendData(
     data: any //später Datenmodel verschicken
   ) {
-    this.endTime = new Date().getTime();  //End time 
+    this.endTime = new Date().getTime();  //End time
 
-    const duration = this.endTime - this.startTime; 
+    const duration = this.endTime - this.startTime;
     //console.log('start:', this.startTime);
     //console.log('ende:', this.endTime );
     //console.log('duration:', duration );
@@ -29,7 +29,7 @@ export class LoggingService {
       storage[element] = localStorage.getItem(element);
     });
 
-    
+
     const test = {
       ...data,
       ...storage,
@@ -38,7 +38,7 @@ export class LoggingService {
       duration :  this.millisToMinutesAndSeconds(duration),
       TimeStamp: this.datumZeit,
 
-      
+
     };
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
@@ -71,9 +71,9 @@ export class LoggingService {
     var seconds = Number(((millis % 60000) / 1000).toFixed(0));
     return minutes + ":" + (seconds < 10 ? '0' : '') + seconds;
   }
-  
+
   setStartTime(){
-    this.startTime = new Date().getTime();  // Start time 
+    this.startTime = new Date().getTime();  // Start time
   }
 
   makeDate(){
@@ -81,8 +81,8 @@ let jetzt = Date.now() ;
 
 let datum  =  new Date(jetzt);
 
-this.datumZeit = `${datum}`;
+this.datumZeit = Date.now(); // `${datum}`;
 
   }
-  
+
 }
