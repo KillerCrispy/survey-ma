@@ -22,6 +22,7 @@ export class LoggingService {
     //console.log('ende:', this.endTime );
     //console.log('duration:', duration );
     const timeStamp = this.datumZeit;
+    console.log("Datum:", timeStamp);
 
     const storage: any = {};
     COLOR_NAMES.forEach((element: string) => {
@@ -76,16 +77,11 @@ export class LoggingService {
   }
 
   makeDate(){
-let jetzt = new Date();
-let tag = jetzt.getDate().toString().padStart(2, '0');
-let monat = (jetzt.getMonth() + 1).toString().padStart(2, '0'); // Monate werden von 0 bis 11 gezählt
-let jahr = jetzt.getFullYear();
-let stunden = jetzt.getHours().toString().padStart(2, '0');
-let minuten = jetzt.getMinutes().toString().padStart(2, '0');
-let sekunden = jetzt.getSeconds().toString().padStart(2, '0');
+let jetzt = Date.now() ;
 
-this.datumZeit = `${tag}.${monat}.${jahr} ${stunden}:${minuten}:${sekunden}`;
+let datum  =  new Date(jetzt);
 
+this.datumZeit = `${datum}`;
 
   }
   
